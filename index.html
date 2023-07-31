@@ -1,38 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Joseph Martínez</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-      </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joseph Martínez</title>
+  <link rel="icon" href="images/icons/3d-modeling.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/39c1a6af02.js" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='style.css'>
+</head>
+
 <body>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm bg-body-tertiary" data-bs-theme="dark" >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Joseph Martínez</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-0 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" download="CV_EN_Joseph_Martinez.pdf" href="cv/CV_EN_Joseph_Martinez.pdf">Download CV</a>
-              </li>
+    <!-- Header -->
+    <header class="site-header sticky-top">
+      <!-- Navbar --> 
+      <nav class="navbar navbar-expand-sm bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand px-5" href="index.html"> <img src="images/icons/3d-modeling.png" alt="icon" width="30"> Joseph Martínez</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" download="CV_EN_Joseph_Martinez.pdf" href="cv/CV_EN_Joseph_Martinez.pdf">Download CV</a>
+                </li>
 
-            </ul>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    
+    <!-- Content -->
+    <main>
+      <div class="row g-5">
+        <!-- Left column bio information -->
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 4rem;">
+            <div class="px-5 pt-5">
+
+            
+            <img src="images/joseph_martinez.png" alt="" width="50%">
+            <h1>Joseph Martínez</h1>
+            <p>Graduate Research Assistant</p>
+            <a href=""> <i class="fa-brands fa-github"></i> GitHub</a>
+            <a href=""> <i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href=""> <i class="fa-brands fa-twitter"></i> Twitter</a>
+            </div>
+            
+
+
+
           </div>
         </div>
-      </nav>
+        <!-- Right column main content -->
+        <div class="col-md-8">
 
-    <!-- Content -->
-    <div id="navbarMainContent">
-        <div >
-            <h5>Empty for now</h5>
-            <p>Probably change the font.</p>
+          <div class="position-relative d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 ">
+            <div class="text-bg-dark px-5 py-5 mx-2 text-center overflow-hidden">
+              <div class="my-3 py-3">
+                <h2 class="display-5">Headline</h2>
+                <p class="lead">And an even wittier subheading.</p>
+              </div>
+    
+              
+            </div>
+            <div class="bg-light px-5 py-5 mx-2 text-center overflow-hidden"> 
+              <div class="my-3 p-3">
+                <h2 class="display-5">Headline</h2>
+                <p class="lead">And an even wittier subheading.</p>
+              </div>
+            </div>
+          </div>
+    
+
         </div>
-    </div>
+      </div>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
+      <a href="https://www.flaticon.com/free-icons/shapes" title="shapes icons">Shapes icons created by Freepik - Flaticon</a>
+    </footer>
 
 </body>
 </html> 

@@ -1,0 +1,15 @@
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none
+}
+a:hover {
+    text-decoration: underline;
+    
+}
+
+.fa-twitter{color:#55acee}
+
+.fa-instagram {
+    color: #C60B7C
+}
