@@ -7,9 +7,15 @@ a:hover {
     text-decoration: underline;
     
 }
+.icon {
+    margin-right: 10px
+}
+
+.text-justify {
+    text-align: justify;
+  }
 
 .fa-twitter{color:#55acee}
 
-.fa-instagram {
-    color: #C60B7C
-}
+.fa-instagram {color: #C60B7C}
+.fa-linkedin {color: #0A66C2}
