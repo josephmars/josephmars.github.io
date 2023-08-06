@@ -8,16 +8,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/39c1a6af02.js" crossorigin="anonymous"></script>
   <link rel='stylesheet' href='style.css'>
+  <script src="index.js"></script>
 </head>
 
-<body>    
+<body data-bs-theme="light">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <!-- Header -->
     <header class="site-header sticky-top">
       <!-- Navbar --> 
       <nav class="navbar navbar-expand-sm bg-body-tertiary">
           <div class="container-fluid">
-            <a class="navbar-brand px-5" href="index.html"> <img src="images/icons/3d-modeling.png" class ="icon" alt="icon" width="30"> Joseph Martínez</a>
+            <a class="navbar-brand " href="index.html"> <img src="images/icons/3d-modeling.png" class ="icon" alt="icon" width="30"> Joseph Martínez</a>
+            <button onclick="changeTheme()" class="btn rounded-fill"><i id="darkIcon" class="fa fa-moon"></i></button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
