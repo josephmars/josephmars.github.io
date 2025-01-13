@@ -5,177 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Joseph Martínez</title>
   <link rel="icon" href="images/icons/3d-modeling.png">
+  
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/39c1a6af02.js" crossorigin="anonymous"></script>
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Aptos&display=swap" rel="stylesheet" type='text/css'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
   
+  <!-- Custom CSS -->
   <link rel='stylesheet' href='style.css'>
-  <script src="index.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="index.js" defer></script>
 </head>
 
 <body data-bs-theme="light">    
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
     <!-- Header -->
     <header class="site-header sticky-top">
-      <!-- Navbar --> 
       <nav class="navbar bg-body-tertiary">
-          <div class="container-fluid justify-content">
+          <div class="container-fluid justify-content-between">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
 
-            <a class="navbar-brand" href="index.html"> <img src="images/icons/3d-modeling.png" class ="icon" alt="icon" width="30"> Joseph Martínez</a>
-            
-            <div class = "navbar">
-            
-              <button onclick="changeTheme()" class="btn">
+              <span style="font-weight: bold;">Joseph Martinez</span>
+            </a>
+            <div class="d-flex">
+              <button onclick="changeTheme()" class="btn btn-outline-secondary me-2">
                 <i id="darkIcon" class="fa fa-moon"></i>
               </button>
-
-              <button class="btn d-flex"> 
-                <a class="nav-link" download="Joseph_Martinez_Resume.pdf" href="resume/Joseph_Martinez_Resume.pdf">Resume <i id="darkIcon" class="fa fa-download"></i></a>
-              </button>
-            
+              <a class="btn btn-outline-primary" download="Joseph_Martinez_Resume.pdf" href="resume/Joseph_Martinez_Resume.pdf">
+                Resume <i class="fa fa-download ms-1"></i>
+              </a>
             </div>
-
-        </div>
-        </nav>
+          </div>
+      </nav>
     </header>
-
     
-    <!-- Content -->
-    <main>
-      <div class="row g-5">
-        <!-- Left column bio information -->
-        <div class="col-md-4">
-          <div class="position-sticky" style="top: 4rem;">
-            <div class="px-5 pt-5 text-center">
-              <img src="https://avatars.githubusercontent.com/u/58085173?v=4" alt="" width="50%" style="border-radius: 50%;">
-              <h1><b></b>Joseph Martinez</b></h1>
-              <i class="fa-solid fa-envelope" href="mailto:josephms957@gmail.com"></i>
-              <i class="fa-brands fa-x-twitter" href="https://twitter.com/joseph_mars7"></i>
-              <i class="fa-brands fa-github" href="https://github.com/josephmars"></i>
-              <i class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/josephmars/"></i>
+    <!-- Main Content -->
+    <main class="my-5">
+      <div class="container p-5 border rounded shadow-sm">
+        <!-- Profile Section -->
+        <div class="text-center mb-4">
+          <img src="https://avatars.githubusercontent.com/u/58085173?v=4" alt="Joseph Martinez" width="300" class="rounded-circle mb-3">
+          <h1 class="mb-1">Joseph Martinez</h1>
+          <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="mailto:josephms957@gmail.com" class="text-decoration-none text-dark"><i class="fa-solid fa-envelope fa-2x"></i></a>
+            <a href="https://twitter.com/joseph_mars7" class="text-decoration-none text-dark"><i class="fa-brands fa-x-twitter fa-2x"></i></a>
+            <a href="https://github.com/josephmars" class="text-decoration-none text-dark"><i class="fa-brands fa-github fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/josephmars/" class="text-decoration-none text-dark"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
+        
+        <!-- About Me -->
+        <section class="mb-5 text-center">
+          <p>
+            Research Assistant with 4 years of expertise in Machine Learning and Natural Language Processing. Skilled in training and deploying LLMs and building  simulation models. 
+          </p>
+        </section>
+        
+        <!-- Work Experience -->
+        <section class="mb-5">
+          <h2 class="text-center">Work Experience</h2>
+          <div id="workExperienceGrid" class="accordion">
+            <!-- Work Experience 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="workExp4Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#workExp4" aria-expanded="false" aria-controls="workExp4">
+                  <img src="https://media.licdn.com/dms/image/v2/D560BAQEbJ6gWu-vtzw/company-logo_200_200/company-logo_200_200/0/1730089995833/aaru_ai_logo?e=1744848000&v=beta&t=AQRZGuzFSAMounLPDxVPZgm2oQIAFUNvFmKYkryy0V4" alt="Aaru logo" width="30" class="me-2">
+                  Aaru - Software Engineer
+                </button>
+              </h2>
+              <div id="workExp4" class="accordion-collapse collapse" aria-labelledby="workExp4Header" data-bs-parent="#workExperienceGrid">
+                <div class="accordion-body">
+                  <strong>Jul 2024 – Present · 7 mos</strong>
+                  <ul class="mt-2">
+                    <li>Improved the performance of multi-agent LLM systems by designing and implementing state-of-the-art algorithms in complex Agent-Based Simulation environments.</li>
+                    <li>Designed simulation environments integrating survey and historical data to model political and business scenarios, enabling the generation of actionable insights and predictive analytics.</li>
+                    <li>Conducted innovative research in Machine Learning and Natural Language Processing while collaborating with interdisciplinary teams to develop AI-driven solutions for real-world challenges.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat similar structure for other work experiences -->
+            <!-- Work Experience 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="workExp3Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#workExp3" aria-expanded="false" aria-controls="workExp3">
+                  <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHb3TSnxH3TAQ/company-logo_200_200/company-logo_200_200/0/1708106289446/oduvmasc_logo?e=1744848000&v=beta&t=z3tW4co0Ps3NCe_U6G7hqI-klMBSubFJREMlwg2wVyg" alt="VMASC logo" width="30" class="me-2">
+                  VMASC - Graduate Research Assistant
+                </button>
+              </h2>
+              <div id="workExp3" class="accordion-collapse collapse" aria-labelledby="workExp3Header" data-bs-parent="#workExperienceGrid">
+                <div class="accordion-body">
+                  <strong>Sep 2022 – Dec 2024 · 2 yrs 4 mos</strong>
+                  <ul class="mt-2">
+                    <li>Trained the LLM GPT-3.5 to create ABM Simulation models by improving its ability to generate NetLogo interface and procedural code elements through few-shot prompting.</li>
+                    <li>Developed a conversational Chatbot expert in a custom domain, enhancing answer fidelity by 90% by fine-tuning the LLM Llama2 7B on a dataset of 330 news articles.</li>
+                    <li>Trained and fine-tuned Machine Learning classification models (RFC, ANN, and BERT) to identify types of frustration in textual data, achieving an average accuracy of 70%.</li>
+                    <li>Designed and maintained detailed documentation of models, algorithms, and reports on GitHub repositories.</li>
+                    <li>Presented poster at a research conference in Pittsburgh, and attended others in Arlington, VA, and Oxford, OH.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Work Experience 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="workExp2Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#workExp2" aria-expanded="false" aria-controls="workExp2">
+                  <img src="https://media.licdn.com/dms/image/v2/C4E0BAQG5Y7rGx9ZScQ/company-logo_200_200/company-logo_200_200/0/1631369250977/old_dominion_university_logo?e=1744848000&v=beta&t=WsfIu3zsOuqnpKxBYZWEVROMlFAh9ORcJ4ODjZG0qyw" alt="ODU logo" width="30" class="me-2">
+                  Old Dominion University - Social Media Data Analyst
+                </button>
+              </h2>
+              <div id="workExp2" class="accordion-collapse collapse" aria-labelledby="workExp2Header" data-bs-parent="#workExperienceGrid">
+                <div class="accordion-body">
+                  <strong>Jul 2021 – Jan 2022 · 8 mos</strong>
+                  <ul class="mt-2">
+                    <li>Geolocated, filtered, and estimated the tone of 7.3 million Tweets through fine-tuning fifteen NLP models (spaCy, BERT, RoBERTa) and statistical analysis.</li>
+                    <li>Extracted, cleaned, and pre-processed 15.5 million Tweets in multiple languages with Twitter’s API and Python.</li>
+                    <li>Collaborated with teams from Norway, Colombia, Greece, and USA on a $1.4M USD Minerva research initiative.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Work Experience 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="workExp1Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#workExp1" aria-expanded="false" aria-controls="workExp1">
+                  <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFc6CdSDsAX5A/company-logo_200_200/company-logo_200_200/0/1666970773204/universidad_del_norte_logo?e=1744848000&v=beta&t=3cPCIcU2VoQABpltc_w5H9GCnRdhHK3M-CsPW5xnzTo" alt="Uninorte logo" width="30" class="me-2">
+                  Universidad del Norte - Social Media Data Analyst
+                </button>
+              </h2>
+              <div id="workExp1" class="accordion-collapse collapse" aria-labelledby="workExp1Header" data-bs-parent="#workExperienceGrid">
+                <div class="accordion-body">
+                  <strong>Nov 2020 – Jun 2021 · 7 mos</strong>
+                  <ul class="mt-2">
+                    <li>Trained a Natural Language Understanding (NLU) model with IBM Watson to semi-automate the identification of actors, factors, and relationships from news articles, achieving a final accuracy of 70%.</li>
+                    <li>Gathered, filtered, and cleaned geo-tagged 4,680 Tweets on migration using Twitter's API and Python.</li>
+                    <li>Conducted a lexicon-based Sentiment Analysis of Tweets to spot xenophobic trends.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Right column main content -->
-        <div class="col-md-8">
-          <div class="my-3 mx-3">
-          <h2 class="text-center">About Me</h2>
-            <p class="text-justify">
-              Experienced Research Assistant with 4 years of expertise in Machine Learning and Natural Language Processing. Skilled in developing and fine-tuning large language models (LLMs) and constructing sophisticated simulation models. 
-            </p>
-
-          <!-- Work experience -->
-            <h2 class="text-center" data-bs-toggle="collapse" href="#workExp" role="button">Work Experience</h2>
-            <div class="mb-3" id="workExp">
-              <a class="h4" data-bs-toggle="collapse" href="#workExp4" role="button" >
-                <img src="https://media.licdn.com/dms/image/v2/D560BAQEbJ6gWu-vtzw/company-logo_200_200/company-logo_200_200/0/1730089995833/aaru_ai_logo?e=1744848000&v=beta&t=AQRZGuzFSAMounLPDxVPZgm2oQIAFUNvFmKYkryy0V4" alt="VMASC logo" width="50" style="margin-right: 5px;">
-                Aaru 
-              </a>
-              <div class="mb-3" id="workExp4">
-                  <b>
-                  Software Engineer<br>
-                  Jul 2024 – Present  · 7 mos <br>
-                  </b>
-                  <p class="mt-2">
-                    • Improved the performance of multi-agent LLM systems by designing and implementing state-of-the-art algorithms in complex Agent-Based Simulation environments. <br>
-                    • Designed simulation environments integrating survey and historical data to model political and business scenarios, enabling the generation of actionable insights and predictive analytics. <br>
-                    • Conducted innovative research in Machine Learning and Natural Language Processing while collaborating with interdisciplinary teams to develop innovative AI-driven solutions for real-world challenges. <br>
-                  </p>
-                </div>
-
-              <a class="h4" data-bs-toggle="collapse" href="#workExp3" role="button" >
-                <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHb3TSnxH3TAQ/company-logo_200_200/company-logo_200_200/0/1708106289446/oduvmasc_logo?e=1744848000&v=beta&t=z3tW4co0Ps3NCe_U6G7hqI-klMBSubFJREMlwg2wVyg" alt="VMASC logo" width="50" style="margin-right: 5px;">
-                VMASC 
-              </a>
-              <div class="mb-3" id="workExp3">
-                  <b>
-                  Graduate Research Assistant<br>
-                  Sep 2022 – Dec 2024  · 2 yrs 4 mos <br>
-                  </b>
-                  <p class="mt-2">
-                    • Trained the Large Language Model (LLM) GPT-3.5's to create ABM Simulation models, by improving its ability to generate NetLogo interface and procedural code elements through few-shot prompting. <br>
-                    • Developed a conversational Chatbot expert in a custom domain enhancing answer fidelity by 90% by fine-tuning the LLM Llama2 7B on a dataset of 330 news articles. <br>
-                    • Trained and fine-tuned Machine Learning classification models (RFC, ANN, and BERT) to identify types of frustration in textual data, achieving an average accuracy of 70%. <br>
-                    • Designed and maintained detailed documentation of models, algorithms, and reports on GitHub repositories. <br>
-                    • Presented poster at a research conference in Pittsburgh, and attended others in Arlington, VA, and Oxford, OH. <br>
-                  </p>
-                </div>
-
-                <a class="h4" data-bs-toggle="collapse" href="#workExp2" role="button" >
-                  <img src="https://media.licdn.com/dms/image/v2/C4E0BAQG5Y7rGx9ZScQ/company-logo_200_200/company-logo_200_200/0/1631369250977/old_dominion_university_logo?e=1744848000&v=beta&t=WsfIu3zsOuqnpKxBYZWEVROMlFAh9ORcJ4ODjZG0qyw" alt="ODU logo" width="50" style="margin-right: 5px;">
-                  Old Dominion University 
-                </a>
-                <div class="mb-3" id="workExp2">
-                    <b>
-                      Social Media Data Analyst (Consultant) <br>
-                      Jul 2021 – Jan 2022  · 8 mos <br>
-                    </b>
-                    <p class="mt-2">
-                      • Geolocated, filtered, and estimated the tone of 7.3 million Tweets through fine-tuning fifteen NLP models (spaCy, BERT, RoBERTa) and statistical analysis. Models were highly reliable, with a mean accuracy of 72%. <br>
-                      • Extracted, cleaned, and pre-processed 15.5 million Tweets in multiple languages with Twitter’s API and Python. <br>
-                      • Collaborated with teams from Norway, Colombia, Greece, and USA on a $1.4M USD Minerva research initiative. <br>
-                    </p>
-                  </div>
-
-                  <a class="h4" data-bs-toggle="collapse" href="#workExp1" role="button" >
-                    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFc6CdSDsAX5A/company-logo_200_200/company-logo_200_200/0/1666970773204/universidad_del_norte_logo?e=1744848000&v=beta&t=3cPCIcU2VoQABpltc_w5H9GCnRdhHK3M-CsPW5xnzTo" alt="Uninorte logo" width="45" style="margin-right: 5px;">
-                    Universidad del Norte 
-                  </a>
-                  <div class="mb-3" id="workExp1">
-                      <b>
-                        Social Media Data Analyst (Research Assistant) <br>
-                        [Nov 2020 – Jun 2021] · 7 mos
-                      </b>
-                      <p class="mt-2">
-                        • Trained a Natural Language Understanding (NLU) model with IBM Watson to semi-automate the identification of actors, factors, and relationships from news articles, achieving a final accuracy of 70%. <br>
-                        • Gathered, filtered, and cleaned geo-tagged 4,680 Tweets on migration using Twitter's API and Python. <br>
-                        • Conducted a lexicon-based Sentiment Analysis of Tweets to spot xenophobic trends. <br>
-                      </p>
-                    </div>
-              </div>
-
-          <!-- Education -->
+        </section>
+        
+        <!-- Education -->
+        <section class="mb-5">
           <h2 class="text-center">Education</h2>
-            <h5>         
-              <img src="https://media.licdn.com/dms/image/v2/C4E0BAQG5Y7rGx9ZScQ/company-logo_200_200/company-logo_200_200/0/1631369250977/old_dominion_university_logo?e=1744848000&v=beta&t=WsfIu3zsOuqnpKxBYZWEVROMlFAh9ORcJ4ODjZG0qyw" alt="ODU logo" height="45" style="margin-right: 5px;">
-              Old Dominion University</h5>
-            <p class="mx-2  ">M.Sc. Modeling and Simulation Engineering <br>
-            Aug 2022 – Dec 2024
-            </p>
+          <div id="educationAccordion" class="accordion">
+            
+            <!-- Education Item 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="education1Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#education1" aria-expanded="false" aria-controls="education1">
+                  <img src="https://media.licdn.com/dms/image/v2/C4E0BAQG5Y7rGx9ZScQ/company-logo_100_100/company-logo_100_100/0/1631369250977/old_dominion_university_logo?e=1744848000&v=beta&t=XF3FQv2zqP9kj-Ix0Sv6lKMuOyaplGQLbLVAOv1GKzo" alt="ODU logo" width="30" class="me-2">
+                  Old Dominion University - M.S. Modeling and Simulation Engineering
+                </button>
+              </h2>
+              <div id="education1" class="accordion-collapse collapse" aria-labelledby="education1Header" data-bs-parent="#educationAccordion">
+                <div class="accordion-body">
 
-
-            <h5>
-              <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFc6CdSDsAX5A/company-logo_200_200/company-logo_200_200/0/1666970773204/universidad_del_norte_logo?e=1744848000&v=beta&t=3cPCIcU2VoQABpltc_w5H9GCnRdhHK3M-CsPW5xnzTo" alt="Uninorte logo" height="45" style="margin-right: 5px;">
-              Universidad del Norte</h5>
-            <p class="mx-2">B.S. Industrial Engineering<br>
-              Jan 2017 – Mar 2022
-            </p>
-
+                  <strong>Aug 2022 – Dec 2024 · 2 yrs 4 mos</strong>
+                  <ul class="mt-2">
+                    <li>Specialized in developing simulation models and enhancing machine learning algorithms.</li>
+                    <li>Collaborated on interdisciplinary projects integrating survey and historical data for predictive analytics.</li>
+                    <li>Presented research findings at multiple academic conferences.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Education Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="education2Header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#education2" aria-expanded="false" aria-controls="education2">
+                  <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFc6CdSDsAX5A/company-logo_200_200/company-logo_200_200/0/1666970773204/universidad_del_norte_logo?e=1744848000&v=beta&t=3cPCIcU2VoQABpltc_w5H9GCnRdhHK3M-CsPW5xnzTo" alt="Uninorte logo" width="30" class="me-2">
+                  Universidad del Norte - B.S. Industrial Engineering
+                </button>
+              </h2>
+              <div id="education2" class="accordion-collapse collapse" aria-labelledby="education2Header" data-bs-parent="#educationAccordion">
+                <div class="accordion-body">
+                  <strong>Jan 2017 – Mar 2022 · 5 yrs 3 mos</strong>
+                  <ul class="mt-2">
+                    <li>Focused on optimizing industrial processes and systems.</li>
+                    <li>Completed a capstone project on enhancing production efficiency using Lean methodologies.</li>
+                    <li>Active member of the Industrial Engineering Society, organizing workshops and seminars.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             
           </div>
-          </div>
-
-            
-
-
-        </div>
-
-    
-
-        </div>
+        </section>
       </div>
-
-
-
     </main>
-
+    
     <!-- Footer -->
-    <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top">
-      <a href="https://www.flaticon.com/free-icons/shapes" title="shapes icons">Shapes icons created by Freepik - Flaticon</a>
+    <footer class="d-flex flex-wrap justify-content-center py-3 my-4 border-top">
+    <!-- social media icons -->
+    <div class="d-flex justify-content-center gap-3 mt-3">
+    <a href="mailto:josephms957@gmail.com" class="text-decoration-none text-dark"><i class="fa-solid fa-envelope" style="font-size: 1.5em; color: #000000;"></i></a>
+    <a href="https://twitter.com/joseph_mars7" class="text-decoration-none text-dark"><i class="fa-brands fa-x-twitter" style="font-size: 1.5em; color: #000000;"></i></a>
+    <a href="https://github.com/josephmars" class="text-decoration-none text-dark"><i class="fa-brands fa-github" style="font-size: 1.5em; color: #000000;"></i></a>
+    <a href="https://www.linkedin.com/in/josephmars/" class="text-decoration-none text-dark"><i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: #000000;"></i></a>
+    </div>
     </footer>
-
+    
 </body>
 </html> 
