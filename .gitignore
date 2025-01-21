@@ -2,3 +2,4 @@ resume/cover_letters_and_resumes
 resume/templates
 resume/job_finding
 *.DS_Store
+.vscode/settings.json
