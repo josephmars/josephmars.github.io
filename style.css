@@ -43,3 +43,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Wix Madefor Text', sans-serif;
 }
+
+/* Project cards */
+.card {
+    transition: all 0.15s ease-out;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: rgba(255,255,255,.05);
+    border-color: rgba(255,255,255,.125);
+}
+
+/* Project tech stack labels */
+.text-body-secondary {
+    font-size: 0.875rem;
+}
