@@ -21,6 +21,15 @@ experiences:
       - "Led a team to streamline documentation and repository management on GitHub across multiple research projects."
       - "Published and presented papers at research conferences in Miami, FL and Pittsburgh, PA."
 
+  - company: "University of Agder (UiA)"
+    title: "Exchange Researcher"
+    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGDzfL8l8Er9Q/company-logo_200_200/company-logo_200_200/0/1630923475346/university_of_agder_logo?e=1747267200&v=beta&t=o-AYs29x0DqK2CM8NiUhKamqDjRGmyS975qzshSS-SA"
+    period: "Oct 2024 – Nov 2024"
+    duration: "2 mos"
+    achievements:
+      - "Led a joint research project with historians and AI teams, applying ML models to analyze 4,000 Norwegian news articles, uncovering patterns in cultural representation."
+      - "Built a generative AI-based entity extraction framework using Llama 3.1, identifying historical references and omissions, enabling deeper analysis of Norwegian identity."
+
   - company: "Old Dominion University"
     title: "Data Scientist"
     logo: "https://media.licdn.com/dms/image/v2/C4E0BAQG5Y7rGx9ZScQ/company-logo_200_200/company-logo_200_200/0/1631369250977/old_dominion_university_logo?e=1744848000&v=beta&t=WsfIu3zsOuqnpKxBYZWEVROMlFAh9ORcJ4ODjZG0qyw"
