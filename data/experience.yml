@@ -1,0 +1,42 @@
+experiences:
+  - company: "Aaru"
+    title: "AI Software Engineer"
+    logo: "https://media.licdn.com/dms/image/v2/D560BAQEbJ6gWu-vtzw/company-logo_200_200/company-logo_200_200/0/1730089995833/aaru_ai_logo?e=1744848000&v=beta&t=AQRZGuzFSAMounLPDxVPZgm2oQIAFUNvFmKYkryy0V4"
+    period: "Jul 2024 – Jan 2025"
+    duration: "7 mos"
+    achievements:
+      - "Fine-tuned the state-of-the-art LLM Qwen 2.5 to deliver agentic, human-like responses, enhancing user satisfaction by 40% by leveraging a curated dataset of consumer preferences."
+      - "Reduced GPU training and deployment costs by 60%, achieving $3/hour, by setting up containerized LLM workflows with Runpod on custom hardware."
+      - "Improved the accuracy of a generative agent-based model (gABM) by 30% through the implementation of live news and trends to the agents' memory and context window."
+
+  - company: "VMASC"
+    title: "Graduate Research Assistant"
+    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHb3TSnxH3TAQ/company-logo_200_200/company-logo_200_200/0/1708106289446/oduvmasc_logo?e=1744848000&v=beta&t=z3tW4co0Ps3NCe_U6G7hqI-klMBSubFJREMlwg2wVyg"
+    period: "Sep 2022 – Dec 2024"
+    duration: "2 yrs 4 mos"
+    achievements:
+      - "Trained Machine Learning classification models (RFC, ANN, and BERT) to identify types of frustration in more than 5000 news articles, achieving an average accuracy of 70%."
+      - "Boosted GPT-3.5's ability to generate NetLogo procedural code by 50% by implementing Retrieval-Augmented Generation (RAG) techniques to support agent-based modeling."
+      - "Improved domain-specific chatbot fidelity by in 25% fine-tuning Llama2 7B on 330 news articles, ensuring high-fidelity responses."
+      - "Led a team to streamline documentation and repository management on GitHub across multiple research projects."
+      - "Published and presented papers at research conferences in Miami, FL and Pittsburgh, PA."
+
+  - company: "Old Dominion University"
+    title: "Data Scientist"
+    logo: "https://media.licdn.com/dms/image/v2/C4E0BAQG5Y7rGx9ZScQ/company-logo_200_200/company-logo_200_200/0/1631369250977/old_dominion_university_logo?e=1744848000&v=beta&t=WsfIu3zsOuqnpKxBYZWEVROMlFAh9ORcJ4ODjZG0qyw"
+    period: "Jul 2021 – Jan 2022"
+    duration: "8 mos"
+    achievements:
+      - "Pre-processed 15.5M multilingual Tweets via Twitter's API and Python, reducing data noise by 40%, facilitating better trend analysis."
+      - "Geolocated, filtered, and estimated the tone of 7.3 million Tweets by fine-tuning 15 NLP models (spaCy, BERT, RoBERTa) and statistical analysis."
+      - "Developed dashboards with Tableau and Google Data Studio, providing actionable migration insights for a $1.4M Minerva research project involving teams from 4+ countries."
+
+  - company: "Universidad del Norte"
+    title: "Data Scientist"
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQFc6CdSDsAX5A/company-logo_200_200/company-logo_200_200/0/1666970773204/universidad_del_norte_logo?e=1744848000&v=beta&t=3cPCIcU2VoQABpltc_w5H9GCnRdhHK3M-CsPW5xnzTo"
+    period: "Nov 2020 – Jun 2021"
+    duration: "7 mos"
+    achievements:
+      - "Automated entity and relationship identification in news articles, achieving an f1-score of 70% by training an NLU model."
+      - "Processed and filtered 4,680 geo-tagged Tweets using Python and Twitter's API, identifying migration patterns and trends."
+      - "Conducted sentiment analysis to track xenophobic trends in social media, providing actionable insights for policymakers." 
