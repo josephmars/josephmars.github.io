@@ -1,8 +1,7 @@
 projects:
   - name: "Reddit Data Analysis - Complexity Global School 2024"
     description: "Analyzed 2TB+ of Reddit data using ML models to understand AI's impact on employment. Processed millions of posts using ODU's HPC, implemented Random Forest and SVM classifiers, and conducted comprehensive topic modeling."
-    image: "https://avatars.githubusercontent.com/u/19215004?s=200&v=4"
-    technologies: ["Python", "ML"]
+    technologies: ["Machine Learning", "Topic Modeling"]
     github: "https://github.com/josephmars/SFI_CGS_2024"
     documentation: null
     paper: null
@@ -14,7 +13,7 @@ projects:
   - name: "Harmful Brain Activity Classification"
     description: "Developed a deep learning model using MobileNetV3 and KerasCV for automated EEG pattern classification in critically ill patients. Implemented data augmentation techniques and achieved competitive performance in Kaggle's HMS competition."
     image: "https://github.com/josephmars/harmful_brain_activity_classification/blob/main/assets/images/EEG.png?raw=true"
-    technologies: ["Python", "Deep Learning"]
+    technologies: ["Deep Learning", "KerasCV"]
     github: "https://github.com/josephmars/harmful_brain_activity_classification"
     documentation: null 
     paper: null
