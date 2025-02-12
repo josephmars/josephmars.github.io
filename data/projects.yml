@@ -13,7 +13,7 @@ projects:
 
   - name: "Harmful Brain Activity Classification"
     description: "Developed a deep learning model using MobileNetV3 and KerasCV for automated EEG pattern classification in critically ill patients. Implemented data augmentation techniques and achieved competitive performance in Kaggle's HMS competition."
-    image: "https://github.com/josephmars/harmful_brain_activity_classification/blob/main/assets/images/EEG.png?raw=true"
+    image: "https://github.com/josephmars/harmful_brain_activity_classification/blob/main/assets/images/thumbnail.png?raw=true"
     technologies: ["Deep Learning", "KerasCV"]
     github: "https://github.com/josephmars/harmful_brain_activity_classification"
     documentation: null 
@@ -21,4 +21,11 @@ projects:
     report: null
     blog: null
     post: null
+    main_page: False
+
+  - name: "CNN for Handwritten Digits classification"
+    description: "Built a CNN model to classify handwritten digits from the MNIST dataset using KerasCV."
+    image: "https://github.com/josephmars/CNN_MNIST/blob/main/assets/images/thumbnail.png?raw=true"
+    technologies: ["Deep Learning", "KerasCV"]
+    github: "https://github.com/josephmars/CNN_MNIST"
     main_page: True
