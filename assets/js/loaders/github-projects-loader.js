@@ -173,7 +173,7 @@ function createProjectCard(project) {
     
     if (project.blog) {
         documentationButtons.push(`
-            <a href="${project.blog}" class="btn btn-sm btn-outline-warning">
+            <a href="${project.blog}" class="btn btn-sm btn-outline-danger">
                 <i class="fa-solid fa-rss me-2"></i>Blog
             </a>
         `);

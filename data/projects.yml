@@ -5,8 +5,8 @@ projects:
     github: "https://github.com/josephmars/SFI_CGS_2024"
     documentation: null
     paper: null
-    report: null
-    blog: null
+    report: "https://github.com/josephmars/SFI_CGS_2024/blob/main/docs/Human%20agency%20in%20automated%20futures.pdf"
+    blog: "https://www.storymodelers.org/post/the-power-of-interdisciplinary-collaboration"
     post: null
     main_page: True # True if the project should be displayed on the main page
 
