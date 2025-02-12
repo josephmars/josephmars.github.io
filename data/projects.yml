@@ -1,6 +1,7 @@
 projects:
   - name: "Reddit Data Analysis - Complexity Global School 2024"
     description: "Analyzed 2TB+ of Reddit data using ML models to understand AI's impact on employment. Processed millions of posts using ODU's HPC, implemented Random Forest and SVM classifiers, and conducted comprehensive topic modeling."
+    image: "https://github.com/josephmars/SFI_CGS_2024/blob/main/assets/images/thumbnail.png?raw=true"
     technologies: ["Machine Learning", "Topic Modeling"]
     github: "https://github.com/josephmars/SFI_CGS_2024"
     documentation: null
