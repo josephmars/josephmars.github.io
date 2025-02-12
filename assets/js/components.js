@@ -13,19 +13,19 @@ function createHeader() {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center gap-1 gap-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname === '/index.html' || window.location.pathname === '/' ? 'active' : ''}" 
+                            <a class="nav-link ${window.location.pathname === '/index.html' || window.location.pathname === '/' ? 'active border-bottom border-dark border-2' : ''}" 
                                href="${window.location.pathname.includes('/pages/') ? '../' : ''}index.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname.includes('projects.html') ? 'active' : ''}" 
+                            <a class="nav-link ${window.location.pathname.includes('projects.html') ? 'active border-bottom border-dark border-2' : ''}" 
                                href="${window.location.pathname.includes('/pages/') ? '' : 'pages/'}projects.html">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname.includes('blog.html') ? 'active' : ''}" 
+                            <a class="nav-link ${window.location.pathname.includes('blog.html') ? 'active border-bottom border-dark border-2' : ''}" 
                                href="${window.location.pathname.includes('/pages/') ? '' : 'pages/'}blog.html">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <button onclick="changeTheme()" class="btn btn-outline-secondary me-2">
+                            <button onclick="changeTheme()" class="btn me-2">
                                 <i id="darkIcon" class="fa fa-moon"></i>
                             </button>
                         </li>

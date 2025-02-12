@@ -117,6 +117,19 @@ async function renderAllProjects() {
             const projectCard = createProjectCard(project);
             projectsGrid.appendChild(projectCard);
         });
+
+        // Add "See All Projects" link if on main page
+        if (isMainPage) {
+            const seeAllDiv = document.createElement('div');
+            seeAllDiv.className = 'col-12 text-center mt-5';
+            seeAllDiv.innerHTML = `
+                <a href="pages/projects.html" class="btn btn-outline-secondary btn-md px-5 py-3 shadow-sm" style="border-width: 1px; transition: all 0.3s ease;">
+                    See All Projects
+                </a>
+                <hr class="my-4">
+            `;
+            projectsGrid.parentElement.appendChild(seeAllDiv);
+        }
     } catch (error) {
         console.error('Error loading projects:', error);
     }
