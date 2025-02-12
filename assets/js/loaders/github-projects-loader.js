@@ -24,8 +24,8 @@ async function fetchGitHubProjects() {
         }
 
         // 2. Try GitHub's social preview image with fallback to Socialify
-        const socialPreviewUrl = `https://opengraph.githubassets.com/1/${username}/${repo.name}`;
-
+        // const socialPreviewUrl = `https://opengraph.githubassets.com/1/${username}/${repo.name}`;
+        const socialPreviewUrl = `https://socialify.git.ci/${username}/${repo.name}/image?font=Inter&forks=1&issues=1&language=0&name=0&owner=0&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light`;
         return socialPreviewUrl;  // Use OpenGraph by default, it's more reliable
     };
 
@@ -54,20 +54,34 @@ async function fetchGitHubProjects() {
         });
         const technologies = [...topics].filter(Boolean);
         
-        // Merge data, preferring yml values when they exist
-        return {
-            name: existingProject?.name || formattedRepoName,
-            description: existingProject?.description || '', // Only use yml description
-            image: existingProject?.image || getProjectImage(repo, existing_projects),
-            technologies: existingProject?.technologies || technologies,
+        // Create base project from API data
+        const baseProject = {
+            name: formattedRepoName,
+            description: '',  // Start with empty description
+            image: getProjectImage(repo, existing_projects),
+            technologies: technologies,
             github: repo.html_url,
-            documentation: existingProject?.documentation || null,
-            paper: existingProject?.paper || null,
-            report: existingProject?.report || null,
-            blog: existingProject?.blog || null,
-            post: existingProject?.post || null,
-            main_page: existingProject?.main_page || false
+            documentation: null,
+            paper: null,
+            report: null,
+            blog: null,
+            post: null,
+            main_page: false
         };
+
+        // If there's an existing project in yml, merge its non-null values
+        if (existingProject) {
+            Object.keys(existingProject).forEach(key => {
+                if (existingProject[key] !== null && existingProject[key] !== undefined) {
+                    baseProject[key] = existingProject[key];
+                }
+            });
+        } else if (repo.description) {
+            // Only use GitHub description if there's no yml entry at all
+            baseProject.description = repo.description;
+        }
+
+        return baseProject;
     });
 
     // Combine projects, ensuring yml projects are included even if not in GitHub API results
