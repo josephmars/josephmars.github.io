@@ -1,0 +1,29 @@
+RewriteEngine On
+RewriteBase /
+
+# Enable rewrite logging for debugging
+RewriteLog "/var/log/apache2/rewrite.log"
+RewriteLogLevel 3
+
+# Remove index.html from URLs - updated for both local and production
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [L,R=301,NC]
+
+# Remove index.html from projects URLs
+RewriteCond %{THE_REQUEST} /projects/index\.html [NC]
+RewriteRule ^(.*)/projects/index\.html$ /$1/projects [L,R=301,NC]
+
+# Remove index.html from blog URLs
+RewriteCond %{THE_REQUEST} /blog/index\.html [NC]
+RewriteRule ^(.*)/blog/index\.html$ /$1/blog [L,R=301,NC]
+
+# Rewrite blog post URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^blog/([^/]+)/?$ pages/blog-post.html?post=$1 [L,QSA]
+
+# Prevent direct access to .md files
+<FilesMatch "\.md$">
+    Order deny,allow
+    Deny from all
+</FilesMatch> 
