@@ -6,6 +6,9 @@ class BlogLoader {
         this.isLocal = options.local || false;
         // Get the base path for GitHub Pages or local development
         this.basePath = this.isLocal ? '/' : this.getBasePath();
+        // Add debug logging
+        console.log('Current URL:', window.location.href);
+        console.log('Current pathname:', window.location.pathname);
         console.log('BlogLoader initialized with basePath:', this.basePath, 'isLocal:', this.isLocal);
     }
 
@@ -19,8 +22,9 @@ class BlogLoader {
 
     async loadBlogPosts() {
         try {
-            console.log('Fetching posts.json...');
-            const response = await fetch(`${this.basePath}blog/posts.json`);
+            const postsJsonUrl = `${this.basePath}blog/posts.json`;
+            console.log('Attempting to fetch posts.json from:', postsJsonUrl);
+            const response = await fetch(postsJsonUrl);
             if (!response.ok) {
                 throw new Error(`Failed to load posts.json: ${response.status}`);
             }
@@ -31,11 +35,11 @@ class BlogLoader {
             console.log('Loading individual posts...');
             const postPromises = posts.map(async (postDir) => {
                 const mdUrl = `${this.basePath}blog/${postDir}/content.md`;
-                console.log(`Attempting to load: ${mdUrl}`);
+                console.log(`Attempting to load markdown from: ${mdUrl}`);
                 try {
                     const response = await fetch(mdUrl);
                     if (!response.ok) {
-                        console.error(`Failed to load ${postDir}: HTTP ${response.status}`);
+                        console.error(`Failed to load ${postDir}: HTTP ${response.status}`, response);
                         return null;
                     }
                     const markdown = await response.text();
@@ -44,6 +48,10 @@ class BlogLoader {
                     try {
                         const { frontMatter } = this.parseFrontMatter(markdown);
                         console.log(`Parsed front matter for ${postDir}:`, frontMatter);
+                        // Ensure image paths are absolute
+                        if (frontMatter.image && !frontMatter.image.startsWith('http')) {
+                            frontMatter.image = `${this.basePath}${frontMatter.image.replace(/^\//, '')}`;
+                        }
                         return {
                             ...frontMatter,
                             slug: postDir
