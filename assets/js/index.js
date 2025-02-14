@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Initialize blog posts
     try {
         console.log('Loading blog posts...');
-        const latestBlogLoader = new BlogLoader({ maxPosts: 3 }); // Maximum number of posts to load
+        const latestBlogLoader = new BlogLoader({ maxPosts: 3}); // Maximum number of posts to load
         await latestBlogLoader.renderBlogPosts('latestBlogPosts');
         console.log('Blog posts loaded successfully');
     } catch (error) {

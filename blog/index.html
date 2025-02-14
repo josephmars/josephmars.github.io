@@ -24,8 +24,12 @@
     <!-- Components JS -->
     <script src="../assets/js/components.js" defer></script>
     
-    <!-- Custom JS -->
-    <script src="../assets/js/index.js" defer></script>
+    <!-- YAML JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    
+    <!-- Blog Loader -->
+    <script src="../assets/js/loaders/blog-loader.js"></script>
+    <script src="../assets/js/blog.js" defer></script>
 </head>
 
 <body data-bs-theme="light">    
@@ -35,12 +39,9 @@
     <!-- Main Content -->
     <main class="my-5">
         <div class="container p-5 border rounded shadow-sm">
-            <div class="text-center">
-                <i class="fas fa-tools fa-4x mb-3 text-muted"></i>
-                <h2 class="mb-3">Coming Soon...</h2>
-                <p class="lead text-muted">
-                    I'm working on some exciting content. Check back later!
-                </p>
+            <h1 class="text-center pb-5">Blog Posts</h1>
+            <div class="row" id="blogPostsGrid">
+                <!-- All posts will be loaded here -->
             </div>
         </div>
     </main>

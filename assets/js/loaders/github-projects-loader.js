@@ -123,7 +123,7 @@ async function renderAllProjects() {
             const seeAllDiv = document.createElement('div');
             seeAllDiv.className = 'col-12 text-center mt-5';
             seeAllDiv.innerHTML = `
-                <a href="pages/projects.html" class="btn btn-outline-secondary btn-md px-5 py-3 shadow-sm" style="border-width: 1px; transition: all 0.3s ease;">
+                <a href="projects/" class="btn btn-outline-secondary btn-md px-5 py-3 shadow-sm" style="border-width: 1px; transition: all 0.3s ease;">
                     See All Projects
                 </a>
                 <hr class="my-4">

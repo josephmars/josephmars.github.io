@@ -3,8 +3,8 @@ function createHeader() {
     <header class="site-header sticky-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" href="${window.location.pathname.includes('/pages/') ? '../' : ''}index.html">
-                    <img src="${window.location.pathname.includes('/pages/') ? '../' : ''}assets/images/icons/mars.png" alt="Mars" width="30" class="me-2">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="/assets/images/icons/mars.png" alt="Mars" width="30" class="me-2">
                     <span style="font-weight: bold; font-size: 0.9em;">Joseph Martinez</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -14,15 +14,15 @@ function createHeader() {
                     <ul class="navbar-nav ms-auto align-items-center gap-1 gap-lg-2">
                         <li class="nav-item">
                             <a class="nav-link ${window.location.pathname === '/index.html' || window.location.pathname === '/' ? 'active border-bottom border-dark border-2' : ''}" 
-                               href="${window.location.pathname.includes('/pages/') ? '../' : ''}index.html">About</a>
+                               href="/">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname.includes('projects.html') ? 'active border-bottom border-dark border-2' : ''}" 
-                               href="${window.location.pathname.includes('/pages/') ? '' : 'pages/'}projects.html">Projects</a>
+                            <a class="nav-link ${window.location.pathname.includes('/projects/') ? 'active border-bottom border-dark border-2' : ''}" 
+                               href="/projects/">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname.includes('blog.html') ? 'active border-bottom border-dark border-2' : ''}" 
-                               href="${window.location.pathname.includes('/pages/') ? '' : 'pages/'}blog.html">Blog</a>
+                            <a class="nav-link ${window.location.pathname.includes('/blog/') ? 'active border-bottom border-dark border-2' : ''}" 
+                               href="/blog/">Blog</a>
                         </li>
                         <li class="nav-item">
                             <button onclick="changeTheme()" class="btn me-2">

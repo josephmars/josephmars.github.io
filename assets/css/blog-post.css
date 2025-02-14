@@ -2,7 +2,12 @@
 .blog-post {
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Wix Madefor Text', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Explicitly exclude banner from blog post styles */
+.site-header {
+    font-family: 'Wix Madefor Text', sans-serif !important;
 }
 
 /* Header styles */
@@ -20,18 +25,21 @@
 }
 
 .title {
-    font-family: 'Georama', sans-serif;
+    font-family: 'Wix Madefor Text', sans-serif;
     font-size: calc(1.375rem + 1.5vw); /* Bootstrap responsive heading size */
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .subtitle {
+    font-family: 'Wix Madefor Text', sans-serif;
     font-size: 1.25rem;
     color: var(--bs-secondary);
+    margin-bottom: 0.5rem;
 }
 
 .meta {
+    font-family: 'Wix Madefor Text', sans-serif;
     font-size: 0.9rem;
     color: var(--bs-secondary);
 }
@@ -43,24 +51,19 @@
 
 /* Content styles */
 .post-content {
+    font-family: 'Wix Madefor Text', sans-serif;
     font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Headings using Bootstrap's spacing utilities */
-.post-content h2 {
-    font-family: 'Georama', sans-serif;
-    font-size: calc(1.325rem + .9vw);
+.post-content h2, 
+.post-content h3, 
+.post-content h4, 
+.post-content h5, 
+.post-content h6 {
+    font-family: 'Wix Madefor Text', sans-serif;
     font-weight: 600;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.post-content h3 {
-    font-family: 'Georama', sans-serif;
-    font-size: calc(1.3rem + .6vw);
-    font-weight: 600;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
 }
 
 /* Links using Bootstrap's colors */
