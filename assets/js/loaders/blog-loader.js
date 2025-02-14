@@ -11,10 +11,7 @@ class BlogLoader {
 
     async loadBlogPosts() {
         try {
-            // Adjust path based on whether we're in the blog directory
-            const postsJsonUrl = this.inBlogDir ? 
-                `${this.basePath}blog/posts.json` : 
-                `${this.basePath}blog/posts.json`;
+            const postsJsonUrl = '/blog/posts.json';
             console.log('Attempting to fetch posts.json from:', postsJsonUrl);
             const response = await fetch(postsJsonUrl);
             if (!response.ok) {
@@ -26,17 +23,25 @@ class BlogLoader {
             // Load and parse each post's content.md
             console.log('Loading individual posts...');
             const postPromises = posts.map(async (postDir) => {
-                // Adjust path based on whether we're in the blog directory
-                const mdUrl = this.inBlogDir ? 
-                    `${this.basePath}blog/${postDir}/content.md` : 
-                    `${this.basePath}blog/${postDir}/content.md`;
+                // Try both content.md and content paths
+                let mdUrl = `/blog/${postDir}/content.md`;
                 console.log(`Attempting to load markdown from: ${mdUrl}`);
+                
                 try {
-                    const response = await fetch(mdUrl);
+                    let response = await fetch(mdUrl);
+                    
+                    // If content.md fails, try without extension
+                    if (!response.ok) {
+                        mdUrl = `/blog/${postDir}/content`;
+                        console.log(`Retrying with: ${mdUrl}`);
+                        response = await fetch(mdUrl);
+                    }
+                    
                     if (!response.ok) {
                         console.error(`Failed to load ${postDir}: HTTP ${response.status}`, response);
                         return null;
                     }
+                    
                     const markdown = await response.text();
                     console.log(`Successfully loaded markdown for ${postDir}`);
                     
