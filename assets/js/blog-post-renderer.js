@@ -28,8 +28,8 @@ class BlogPostRenderer {
                 .replace(/\/$/, ''); // Remove trailing slash if present
             console.log('Post slug:', slug);
             
-            // Use relative path to get to the content.md in the same directory
-            markdownUrl = './content.md';
+            // Use absolute path instead of relative
+            markdownUrl = `/blog/${slug}/content.md`;
             console.log('Fetching markdown from:', markdownUrl);
             
             const response = await fetch(markdownUrl);
