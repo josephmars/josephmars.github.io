@@ -15,9 +15,11 @@ class BlogLoader {
     getBasePath() {
         // Extract the repository name from the URL for GitHub Pages
         const pathSegments = window.location.pathname.split('/');
+        // Remove empty strings and 'blog' from path segments
+        const filteredSegments = pathSegments.filter(segment => segment && segment !== 'blog');
         // If we're on username.github.io, use '/', otherwise use '/reponame/'
-        const isUserPage = window.location.hostname === `${pathSegments[1]}.github.io`;
-        return isUserPage ? '/' : `/${pathSegments[1]}/`;
+        const isUserPage = window.location.hostname === `${filteredSegments[0]}.github.io`;
+        return isUserPage ? '/' : `/${filteredSegments[0]}/`;
     }
 
     async loadBlogPosts() {
