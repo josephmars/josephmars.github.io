@@ -13,16 +13,16 @@ function createHeader() {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center gap-1 gap-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname === '/index.html' || window.location.pathname === '/' ? 'active border-bottom border-dark border-2' : ''}" 
+                            <a class="nav-link ${window.location.pathname === '/' || window.location.pathname === '/' ? 'active border-bottom border-dark border-2' : ''}" 
                                href="/">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname.includes('/projects/') ? 'active border-bottom border-dark border-2' : ''}" 
-                               href="/projects/">Projects</a>
+                            <a class="nav-link ${window.location.pathname.includes('/projects') ? 'active border-bottom border-dark border-2' : ''}" 
+                               href="/projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${window.location.pathname.includes('/blog/') ? 'active border-bottom border-dark border-2' : ''}" 
-                               href="/blog/">Blog</a>
+                            <a class="nav-link ${window.location.pathname.includes('/blog') ? 'active border-bottom border-dark border-2' : ''}" 
+                               href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
                             <button onclick="changeTheme()" class="btn me-2">
