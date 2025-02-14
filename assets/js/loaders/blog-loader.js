@@ -6,10 +6,12 @@ class BlogLoader {
         this.isLocal = options.local || false;
         // Get the base path for GitHub Pages or local development
         this.basePath = this.isLocal ? '/' : this.getBasePath();
+        // Determine if we're in the blog directory
+        this.inBlogDir = window.location.pathname.includes('/blog/');
         // Add debug logging
         console.log('Current URL:', window.location.href);
         console.log('Current pathname:', window.location.pathname);
-        console.log('BlogLoader initialized with basePath:', this.basePath, 'isLocal:', this.isLocal);
+        console.log('BlogLoader initialized with basePath:', this.basePath, 'isLocal:', this.isLocal, 'inBlogDir:', this.inBlogDir);
     }
 
     getBasePath() {
@@ -30,7 +32,10 @@ class BlogLoader {
 
     async loadBlogPosts() {
         try {
-            const postsJsonUrl = `${this.basePath}blog/posts.json`;
+            // Adjust path based on whether we're in the blog directory
+            const postsJsonUrl = this.inBlogDir ? 
+                `${this.basePath}blog/posts.json` : 
+                `${this.basePath}blog/posts.json`;
             console.log('Attempting to fetch posts.json from:', postsJsonUrl);
             const response = await fetch(postsJsonUrl);
             if (!response.ok) {
@@ -42,7 +47,10 @@ class BlogLoader {
             // Load and parse each post's content.md
             console.log('Loading individual posts...');
             const postPromises = posts.map(async (postDir) => {
-                const mdUrl = `${this.basePath}blog/${postDir}/content.md`;
+                // Adjust path based on whether we're in the blog directory
+                const mdUrl = this.inBlogDir ? 
+                    `${this.basePath}blog/${postDir}/content.md` : 
+                    `${this.basePath}blog/${postDir}/content.md`;
                 console.log(`Attempting to load markdown from: ${mdUrl}`);
                 try {
                     const response = await fetch(mdUrl);
@@ -122,7 +130,7 @@ class BlogLoader {
                         <a href="${this.basePath}blog/${post.slug}/" class="text-decoration-none">
                             <div class="card-img-wrapper" style="position: relative; padding-top: 50%;">
                                 <img 
-                                    src="${post.image ? this.basePath + post.image.replace(/^\//, '') : this.basePath + 'assets/images/fallback/blog.jpg'}" 
+                                    src="${post.image ? (post.image.startsWith('http') ? post.image : this.basePath + post.image.replace(/^\//, '')) : this.basePath + 'assets/images/fallback/blog.jpg'}" 
                                     class="card-img-top" 
                                     alt="${post.title}"
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
