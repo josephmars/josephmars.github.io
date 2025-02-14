@@ -4,7 +4,7 @@ description: "The 2024 Complexity Summer School (CGS) in Bogotá, Colombia, brou
 author: "Joseph Martínez"
 date: "2024-08-29"
 category: "RESEARCH"
-readTime: "4 min read"
+readTime: 4
 image: "https://static.wixstatic.com/media/7b584b_6e9e995edd754b8dbc41a59abfbfa3cb~mv2.jpg/v1/fill/w_1816,h_1364,fp_0.50_0.50,q_90,enc_auto/7b584b_6e9e995edd754b8dbc41a59abfbfa3cb~mv2.jpg"
 ---
 
