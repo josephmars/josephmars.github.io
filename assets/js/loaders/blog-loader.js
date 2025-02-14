@@ -2,13 +2,25 @@ class BlogLoader {
     constructor(options = {}) {
         // If maxPosts is explicitly 0 or not provided, show all posts
         this.maxPosts = (options.maxPosts === undefined || options.maxPosts === 0) ? Infinity : options.maxPosts;
-        console.log('BlogLoader initialized with maxPosts:', this.maxPosts);
+        // Add local development option
+        this.isLocal = options.local || false;
+        // Get the base path for GitHub Pages or local development
+        this.basePath = this.isLocal ? '/' : this.getBasePath();
+        console.log('BlogLoader initialized with basePath:', this.basePath, 'isLocal:', this.isLocal);
+    }
+
+    getBasePath() {
+        // Extract the repository name from the URL for GitHub Pages
+        const pathSegments = window.location.pathname.split('/');
+        // If we're on username.github.io, use '/', otherwise use '/reponame/'
+        const isUserPage = window.location.hostname === `${pathSegments[1]}.github.io`;
+        return isUserPage ? '/' : `/${pathSegments[1]}/`;
     }
 
     async loadBlogPosts() {
         try {
             console.log('Fetching posts.json...');
-            const response = await fetch('../blog/posts.json');
+            const response = await fetch(`${this.basePath}blog/posts.json`);
             if (!response.ok) {
                 throw new Error(`Failed to load posts.json: ${response.status}`);
             }
@@ -18,7 +30,7 @@ class BlogLoader {
             // Load and parse each post's content.md
             console.log('Loading individual posts...');
             const postPromises = posts.map(async (postDir) => {
-                const mdUrl = `../blog/${postDir}/content.md`;
+                const mdUrl = `${this.basePath}blog/${postDir}/content.md`;
                 console.log(`Attempting to load: ${mdUrl}`);
                 try {
                     const response = await fetch(mdUrl);
@@ -91,14 +103,14 @@ class BlogLoader {
             return `
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card h-100">
-                        <a href="../blog/${post.slug}/" class="text-decoration-none">
+                        <a href="${this.basePath}blog/${post.slug}/" class="text-decoration-none">
                             <div class="card-img-wrapper" style="position: relative; padding-top: 50%;">
                                 <img 
-                                    src="${post.image || '/assets/images/fallback/blog.jpg'}" 
+                                    src="${post.image ? this.basePath + post.image.replace(/^\//, '') : this.basePath + 'assets/images/fallback/blog.jpg'}" 
                                     class="card-img-top" 
                                     alt="${post.title}"
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
-                                    onerror="this.onerror=null; this.src='/assets/images/grey.png';"
+                                    onerror="this.onerror=null; this.src='${this.basePath}assets/images/grey.png';"
                                 >
                             </div>
                             <div class="card-body">
