@@ -10,7 +10,9 @@ const postsJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../blog/posts
 // Process each post in posts.json
 postsJson.forEach(slug => {
     const postDir = path.join(__dirname, '../blog', slug);
-    const contentPath = path.join(postDir, 'content.md');
+    // Create both paths - with and without .md extension
+    const contentPathMd = path.join(postDir, 'content.md');
+    const contentPath = path.join(postDir, 'content');
     
     // Create directory if it doesn't exist
     if (!fs.existsSync(postDir)) {
@@ -20,10 +22,12 @@ postsJson.forEach(slug => {
     // Copy template as index.html
     fs.writeFileSync(path.join(postDir, 'index.html'), template);
     
-    // If content.md doesn't exist in the target directory, copy it from the source
-    if (!fs.existsSync(contentPath)) {
+    // If neither content file exists in the target directory, copy from source
+    if (!fs.existsSync(contentPathMd) && !fs.existsSync(contentPath)) {
         const sourceContent = path.join(__dirname, '../blog', `${slug}.md`);
         if (fs.existsSync(sourceContent)) {
+            // Copy to both locations to ensure compatibility
+            fs.copyFileSync(sourceContent, contentPathMd);
             fs.copyFileSync(sourceContent, contentPath);
         } else {
             console.error(`Warning: Content file not found for ${slug}`);
