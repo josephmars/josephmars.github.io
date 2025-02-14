@@ -1,14 +1,12 @@
 class BlogLoader {
     constructor(options = {}) {
-        // If maxPosts is explicitly 0 or not provided, show all posts
-        this.maxPosts = (options.maxPosts === undefined || options.maxPosts === 0) ? Infinity : options.maxPosts;
+        // If maxPosts is not provided, show all posts
+        this.maxPosts = (options.maxPosts === undefined) ? Infinity : options.maxPosts;
         // Add local development option
         this.isLocal = options.local || false;
+        this.inBlogDir = window.location.pathname.includes('/blog/');
         // Get the base path for GitHub Pages or local development
         this.basePath = this.isLocal ? '/' : this.getBasePath();
-        // Determine if we're in the blog directory
-        this.inBlogDir = window.location.pathname.includes('/blog/');
-        // Add debug logging
         console.log('Current URL:', window.location.href);
         console.log('Current pathname:', window.location.pathname);
         console.log('BlogLoader initialized with basePath:', this.basePath, 'isLocal:', this.isLocal, 'inBlogDir:', this.inBlogDir);
@@ -16,7 +14,9 @@ class BlogLoader {
 
     getBasePath() {
         // Extract the repository name from the URL for GitHub Pages
-        const pathSegments = window.location.pathname.split('/').filter(segment => segment);
+        const pathSegments = window.location.pathname
+            .split('/')
+            .filter(segment => segment && segment !== 'blog'); // Exclude 'blog' from path
         
         // If we're on username.github.io domain
         if (window.location.hostname.endsWith('.github.io')) {
