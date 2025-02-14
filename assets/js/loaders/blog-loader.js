@@ -4,30 +4,9 @@ class BlogLoader {
         this.maxPosts = (options.maxPosts === undefined) ? Infinity : options.maxPosts;
         // Add local development option
         this.isLocal = options.local || false;
-        this.inBlogDir = window.location.pathname.includes('/blog/');
-        // Get the base path for GitHub Pages or local development
-        this.basePath = this.isLocal ? '/' : this.getBasePath();
-        console.log('Current URL:', window.location.href);
-        console.log('Current pathname:', window.location.pathname);
-        console.log('BlogLoader initialized with basePath:', this.basePath, 'isLocal:', this.isLocal, 'inBlogDir:', this.inBlogDir);
-    }
-
-    getBasePath() {
-        // Extract the repository name from the URL for GitHub Pages
-        const pathSegments = window.location.pathname
-            .split('/')
-            .filter(segment => segment && segment !== 'blog'); // Exclude 'blog' from path
-        
-        // If we're on username.github.io domain
-        if (window.location.hostname.endsWith('.github.io')) {
-            // Check if it's a user/org page or project page
-            if (window.location.hostname.split('.')[0] === pathSegments[0]) {
-                return '/'; // user/org page
-            }
-        }
-        
-        // For project pages or other cases, include the repo name
-        return pathSegments.length > 0 ? `/${pathSegments[0]}/` : '/';
+        // Since we're using a custom domain, we can always use root path
+        this.basePath = '/';
+        console.log('BlogLoader initialized with basePath:', this.basePath, 'isLocal:', this.isLocal);
     }
 
     async loadBlogPosts() {
