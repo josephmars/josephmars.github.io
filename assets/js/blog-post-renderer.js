@@ -22,17 +22,21 @@ class BlogPostRenderer {
     async loadAndRenderPost() {
         let markdownUrl;
         try {
-            // Get post slug from URL path
             const slug = window.location.pathname
                 .split('/blog/')[1]
-                .replace(/\/$/, ''); // Remove trailing slash if present
+                .replace(/\/$/, '');
             console.log('Post slug:', slug);
             
-            // Use absolute path instead of relative
-            markdownUrl = `/blog/${slug}/content.md`;
-            console.log('Fetching markdown from:', markdownUrl);
+            // Try both URLs - first without .md extension, then with it
+            markdownUrl = `/blog/${slug}/content`;
+            let response = await fetch(markdownUrl);
             
-            const response = await fetch(markdownUrl);
+            // If the first attempt fails, try with .md extension
+            if (!response.ok) {
+                markdownUrl = `/blog/${slug}/content.md`;
+                response = await fetch(markdownUrl);
+            }
+            
             if (!response.ok) {
                 throw new Error(`Failed to load post: ${response.status}`);
             }
