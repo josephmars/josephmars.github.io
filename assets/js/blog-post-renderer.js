@@ -185,8 +185,19 @@ class BlogPostRenderer {
     }
 
     renderPost(frontMatter, content) {
-        // Update page title
+        // Update page metadata
         document.title = `${frontMatter.title} | Joseph Martinez`;
+        
+        // Update favicon
+        const favicon = document.querySelector('link[rel="icon"]');
+        if (!favicon) {
+            const newFavicon = document.createElement('link');
+            newFavicon.rel = 'icon';
+            newFavicon.href = '/assets/images/icons/mars.png';
+            document.head.appendChild(newFavicon);
+        } else {
+            favicon.href = '/assets/images/icons/mars.png';
+        }
         
         // Render front matter data
         this.renderPostMetadata(frontMatter);
