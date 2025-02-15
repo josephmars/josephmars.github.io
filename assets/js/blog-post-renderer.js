@@ -20,78 +20,52 @@ class BlogPostRenderer {
     }
 
     async loadAndRenderPost() {
-        let markdownUrl;
         try {
+            // Get the slug from the URL (e.g., 'brainstorming-big-ideas')
             const slug = window.location.pathname
                 .split('/blog/')[1]
                 .replace(/\/$/, '');
             console.log('Post slug:', slug);
             
-            // Try both URLs - first without .md extension, then with it
-            markdownUrl = `/blog/${slug}/content`;
-            let response = await fetch(markdownUrl);
+            // Construct the markdown URL
+            const markdownUrl = `/blog/${slug}/content.md`;
+            console.log('Attempting to load markdown from:', markdownUrl);
             
-            // If the first attempt fails, try with .md extension
+            const response = await fetch(markdownUrl);
             if (!response.ok) {
-                markdownUrl = `/blog/${slug}/content.md`;
-                response = await fetch(markdownUrl);
+                throw new Error(`Failed to load post (${response.status}). Please ensure the markdown file exists at ${markdownUrl}`);
             }
-            
-            if (!response.ok) {
-                throw new Error(`Failed to load post: ${response.status}`);
-            }
-            
+
             const markdown = await response.text();
-            console.log('Markdown loaded:', markdown.substring(0, 100) + '...');
-            
-            // Split front matter and content
+            console.log('Markdown loaded successfully');
+
+            // Parse front matter and content
             const { frontMatter, content } = this.parseFrontMatter(markdown);
-            console.log('Front matter:', frontMatter);
             
-            // Update page title
-            document.title = `${frontMatter.title} | Joseph Martinez`;
-            
-            // Render front matter data
-            this.renderPostMetadata(frontMatter);
-            
-            // Render markdown content
-            console.log('Converting markdown to HTML...');
-            const htmlContent = marked.parse(content);
-            document.querySelector('.post-content').innerHTML = htmlContent;
-            
-            // Add additional features
-            this.enhanceContent();
-            
-            // Highlight code blocks
-            Prism.highlightAll();
-            
-            console.log('Render complete');
+            // Render the post
+            this.renderPost(frontMatter, content);
         } catch (error) {
             console.error('Error rendering post:', error);
-            document.querySelector('.post-content').innerHTML = `
-                <div class="alert alert-danger">
-                    <h4>Error Loading Post</h4>
-                    <p>${error.message}</p>
-                    <p>Debug info:</p>
-                    <pre>
-                    Path: ${window.location.pathname}
-                    Attempted markdown URL: ${markdownUrl}
-                    </pre>
-                    <p>Please try again later or <a href="/">return home</a>.</p>
-                </div>
-            `;
+            this.renderError(error.message);
         }
     }
 
     parseFrontMatter(markdown) {
+        // Look for front matter between --- markers
         const match = markdown.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+        
         if (!match) {
             throw new Error('Invalid front matter format');
         }
-        return {
-            frontMatter: jsyaml.load(match[1]),
-            content: match[2]
-        };
+        
+        try {
+            const frontMatter = jsyaml.load(match[1]);
+            const content = match[2];
+            return { frontMatter, content };
+        } catch (error) {
+            console.error('Error parsing YAML:', error);
+            throw new Error('Invalid YAML in front matter');
+        }
     }
 
     renderPostMetadata(frontMatter) {
@@ -198,6 +172,37 @@ class BlogPostRenderer {
             anchor.style.color = 'inherit';
             heading.appendChild(anchor);
         });
+    }
+
+    renderError(message) {
+        document.querySelector('.post-content').innerHTML = `
+            <div class="alert alert-danger">
+                <h4>Error Loading Post</h4>
+                <p>${message}</p>
+                <p>Please try again later or <a href="/">return home</a>.</p>
+            </div>
+        `;
+    }
+
+    renderPost(frontMatter, content) {
+        // Update page title
+        document.title = `${frontMatter.title} | Joseph Martinez`;
+        
+        // Render front matter data
+        this.renderPostMetadata(frontMatter);
+        
+        // Render markdown content
+        console.log('Converting markdown to HTML...');
+        const htmlContent = marked.parse(content);
+        document.querySelector('.post-content').innerHTML = htmlContent;
+        
+        // Add additional features
+        this.enhanceContent();
+        
+        // Highlight code blocks
+        Prism.highlightAll();
+        
+        console.log('Render complete');
     }
 }
 
