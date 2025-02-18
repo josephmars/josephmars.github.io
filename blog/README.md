@@ -5,6 +5,7 @@
 3. copy the `blog-post-template.html` file to the folder and name it `index.html`.
 4. Add images to the folder and then reference them in the Markdown file.
 5. Add the folder to  `posts.json` file in the `blog` directory.
+6. Add the blog post information to the `sitemap.xml` file.
 
 Notes:
 - The `posts.json` file is used to generate the blog posts on the homepage.
