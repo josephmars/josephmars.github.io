@@ -15,13 +15,13 @@ async function renderExperience() {
     data.experiences.forEach((exp, index) => {
         const experienceHTML = `
             <div class="accordion-item">
-                <h2 class="accordion-header" id="workExp${index}Header">
+                <div class="accordion-header" id="workExp${index}Header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                             data-bs-target="#workExp${index}" aria-expanded="false" aria-controls="workExp${index}">
                         <img src="${exp.logo}" alt="${exp.company} logo" width="30" class="me-2">
                         ${exp.company} - ${exp.title}
                     </button>
-                </h2>
+                </div>
                 <div id="workExp${index}" class="accordion-collapse collapse" aria-labelledby="workExp${index}Header" data-bs-parent="#workExperienceGrid">
                     <div class="accordion-body">
                         <strong>${exp.period} · ${exp.duration}</strong>

@@ -196,7 +196,7 @@ function createProjectCard(project) {
                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="card-body d-flex flex-column">
-                ${project.name ? `<h5 class="card-title mb-3">${project.name}</h5>` : ''}
+                ${project.name ? `<h3 class="card-title mb-3 h5">${project.name}</h3>` : ''}
                 ${project.description ? `<p class="card-text flex-grow-1">${project.description}</p>` : ''}
                 <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-0 justify-content-between align-items-start align-items-sm-center mt-3">
                     <div class="btn-group">

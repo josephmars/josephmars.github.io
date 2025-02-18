@@ -15,13 +15,13 @@ async function renderEducation() {
     data.education.forEach((edu, index) => {
         const educationHTML = `
             <div class="accordion-item">
-                <h2 class="accordion-header" id="education${index}Header">
+                <div class="accordion-header" id="education${index}Header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                             data-bs-target="#education${index}" aria-expanded="false" aria-controls="education${index}">
                         <img src="${edu.logo}" alt="${edu.institution} logo" width="30" class="me-2">
                         ${edu.institution} - ${edu.degree}
                     </button>
-                </h2>
+                </div>
                 <div id="education${index}" class="accordion-collapse collapse" aria-labelledby="education${index}Header" data-bs-parent="#educationAccordion">
                     <div class="accordion-body">
                         <strong>${edu.period}</strong><br>
