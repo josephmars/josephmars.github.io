@@ -109,7 +109,7 @@ class BlogLoader {
     createBlogPostCard(post) {
         try {
             return `
-                <div class="col-md-6 col-lg-4 mb-4">
+                <article class="col-md-6 col-lg-4 mb-4">
                     <div class="card h-100">
                         <a href="${this.basePath}blog/${post.slug}/" class="text-decoration-none">
                             <div class="card-img-wrapper" style="position: relative; padding-top: 50%;">
@@ -121,26 +121,27 @@ class BlogLoader {
                                     onerror="this.onerror=null; this.src='${this.basePath}assets/images/grey.png';"
                                 >
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pb-0">
                                 <div class="text-muted small mb-1">${post.category || ''}</div>
-                                <h5 class="card-title text-body">${post.title || 'Untitled'}</h5>
+                                <h3 class="card-title text-body h5">${post.title || 'Untitled'}</h3>
                             </div>
                         </a>
                         <div class="card-body pt-0">
                             <p class="card-text text-secondary">${post.description ? post.description.substring(0, 100) + '...' : ''}</p>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <small class="text-muted">
+                            <time datetime="${post.date}" class="text-muted small">
                                 ${post.date ? new Date(post.date + 'T00:00:00-05:00').toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',
                                     day: 'numeric',
                                     timeZone: 'America/New_York'
-                                }) : ''} ${post.readTime ? `• ${post.readTime} min read` : ''}
-                            </small>
+                                }) : ''}
+                            </time>
+                            ${post.readTime ? `<small class="text-muted">• ${post.readTime} min read</small>` : ''}
                         </div>
                     </div>
-                </div>
+                </article>
             `;
         } catch (error) {
             console.error('Error creating blog post card:', error, post);

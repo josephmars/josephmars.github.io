@@ -30,6 +30,30 @@
     <!-- Blog Loader -->
     <script src="../assets/js/loaders/blog-loader.js"></script>
     <script src="../assets/js/blog.js" defer></script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Read insights about AI, Machine Learning, and Data Science from Joseph Martinez. Technical articles and tutorials about LLMs, neural networks, and more.">
+    <meta name="keywords" content="AI Blog, Machine Learning Articles, Data Science Tutorial, LLM Training, Neural Networks, Joseph Martinez">
+    <meta name="author" content="Joseph Martinez">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <meta rel="canonical" href="https://josephmars.me/blog/">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "AI & Machine Learning Blog by Joseph Martinez",
+      "description": "Technical articles and insights about AI, Machine Learning, and Data Science",
+      "author": {
+        "@type": "Person",
+        "name": "Joseph Martinez",
+        "url": "https://josephmars.me"
+      }
+    }
+    </script>
 </head>
 
 <body data-bs-theme="light">    
@@ -37,11 +61,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     
     <!-- Main Content -->
-    <main class="my-lg-5 my-md-3my-sm-1">
+    <main class="my-lg-5 my-md-3 my-sm-1">
         <div class="container p-5 border rounded shadow-sm">
-            <h1 class="text-center pb-5">Blog Posts</h1>
+            <h2 class="text-center pb-5 h1">Blog Posts</h2>
             <div class="row" id="blogPostsGrid">
-                <!-- All posts will be loaded here -->
+                <!-- Wrap each blog post in article tags when generated -->
+                <!-- Example structure:
+                <article class="col-12 mb-4">
+                    <h2><a href="/blog/post-slug">Post Title</a></h2>
+                    <time datetime="2024-03-21">March 21, 2024</time>
+                    <p class="mt-2">Post excerpt...</p>
+                    <div class="tags">
+                        <span class="badge bg-secondary">AI</span>
+                        <span class="badge bg-secondary">Machine Learning</span>
+                    </div>
+                </article>
+                -->
             </div>
         </div>
     </main>
