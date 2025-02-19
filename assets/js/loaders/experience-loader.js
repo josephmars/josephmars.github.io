@@ -18,7 +18,7 @@ async function renderExperience() {
                 <div class="accordion-header" id="workExp${index}Header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                             data-bs-target="#workExp${index}" aria-expanded="false" aria-controls="workExp${index}">
-                        <img src="${exp.logo}" alt="${exp.company} logo" width="30" class="me-2">
+                        <img src="${exp.logo}" alt="${exp.company} logo" width="30" class="me-2" title="${exp.company} logo">
                         <h3 class="fs-6 fw-normal mb-0">${exp.company} - ${exp.title}</h3>
                     </button>
                 </div>

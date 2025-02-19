@@ -117,6 +117,7 @@ class BlogLoader {
                                     src="${post.image ? (post.image.startsWith('http') ? post.image : this.basePath + post.image.replace(/^\//, '')) : this.basePath + 'assets/images/fallback/blog.jpg'}" 
                                     class="card-img-top" 
                                     alt="${post.title}"
+                                    title="${post.title}"
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
                                     onerror="this.onerror=null; this.src='${this.basePath}assets/images/grey.png';"
                                 >

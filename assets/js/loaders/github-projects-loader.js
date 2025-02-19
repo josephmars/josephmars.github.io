@@ -192,7 +192,7 @@ function createProjectCard(project) {
     div.innerHTML = `
         <div class="card h-100 shadow-sm">
             <div class="card-img-wrapper" style="position: relative; padding-top: 50%;">
-                <img src="${project.image}" class="card-img-top" alt="${project.name || 'Project'}" 
+                <img src="${project.image}" class="card-img-top" alt="${project.name || 'Project'}" title="${project.name || 'Project'}"
                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="card-body d-flex flex-column">
