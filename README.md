@@ -1,27 +1,25 @@
-# josephmars.github.io
-Personal webpage  
-Joseph Martinez
+# [josephmars.me](https://josephmars.me)
 
 ```
 root/
 │
+├── sitemap.xml
 ├── index.html
 ├── data/
 │   ├── education.yml
 │   └── experience.yml
-├── pages/
-│   ├── projects.html
-│   └── blog.html
+│   └── projects.yml
+├── projects/
+│   ├── index.html
+├── blog/
+│   ├── index.html
+│   └── [blog-post-1]/
+│       ├── index.html
+│       └── content.md
+│   └── [blog-post-2]/
+│       ├── index.html
+│       └── content.md
+│   └── ...
 ├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── data-loader.js
-│   │   └── index.js
-│   └── images/
-│       ├── icons/
-│       │   └── mars.png
-│       └── joseph_martinez.jpg
-├── resume/
-│   └── Joseph_Martinez_Resume.pdf
+│   ├── ...
 ```
