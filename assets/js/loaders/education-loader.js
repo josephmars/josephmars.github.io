@@ -19,7 +19,7 @@ async function renderEducation() {
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                             data-bs-target="#education${index}" aria-expanded="false" aria-controls="education${index}">
                         <img src="${edu.logo}" alt="${edu.institution} logo" width="30" class="me-2">
-                        ${edu.institution} - ${edu.degree}
+                        <h3 class="fs-6 fw-normal mb-0">${edu.institution} - ${edu.degree}</h3>
                     </button>
                 </div>
                 <div id="education${index}" class="accordion-collapse collapse" aria-labelledby="education${index}Header" data-bs-parent="#educationAccordion">
