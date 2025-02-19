@@ -23,7 +23,7 @@ tags:
 On November 15, 2023, members of the Storymodelers lab met with Dr. Joshua Behr to learn from his experiences in successfully obtaining funding from the National Science Foundation (NSF). Our goal was to understand what to do and what to avoid when writing a proposal to NSF to increase the chances of acceptance. The Storymodelers graduate researchers gathered to discuss and consolidate the insights we'll share in this blog post.
 
 <div style="text-align: center;">
-    <img src="https://static.wixstatic.com/media/7b584b_a33f827908a14dac82c7be04d335d465~mv2.png" alt="Overview of the blog sections" style="max-width: 100%;">
+    <img src="https://static.wixstatic.com/media/7b584b_a33f827908a14dac82c7be04d335d465~mv2.png" alt="Overview of the blog sections" title="Overview of the blog sections" style="max-width: 100%;">
     <p><em>Figure 1. Overview of the blog sections.</em></p>
 </div>
 

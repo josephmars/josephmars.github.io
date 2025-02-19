@@ -17,7 +17,7 @@ tags: ["interdisciplinary research", "graduate research assistant experiences", 
 
 I was selected to participate in the International Student Exchange Program (ISEP) funded by the U.S. Air Force Office of Scientific Research (AFOSR). This program is designed to connect AFOSR-funded teams internationally to deepen collaboration and allowed me to spend a month in Norway, collaborating with faculty at the University of Agder (UiA) in Kristiansand. It was a unique blend of travel, breathtaking scenery, and interdisciplinary research—an experience that left a lasting impression on me. Here are some of the key lessons I brought back from this unforgettable journey...
 <p style="text-align: center;">
-    <img src="/blog/norway-research-visit/selfie.png" alt="Joseph Martinez at University of Agder, Norway" style="max-width: 70%;">
+    <img src="/blog/norway-research-visit/selfie.png" alt="Joseph Martinez at University of Agder, Norway" title="Joseph Martinez at University of Agder, Norway" style="max-width: 70%;">
     <em>Joseph Martinez at University of Agder, Norway</em>
 </p>
 
@@ -50,7 +50,7 @@ Our research revealed fascinating insights about how Norway's cultural identitie
 But this diversity wasn't just a research finding but something I experienced firsthand. Walking through Oslo, I saw the positive influence that migrants from Arab and East African countries had on Norwegian society. At UiA, the campus itself reflected this cultural richness, blending stunning natural surroundings with a vibrant, diverse community. The cultural exchanges I witnessed made me appreciate how history and migration interconnect to shape a nation's identity.
 
 <p style="text-align: center;">
-    <img src="/blog/norway-research-visit/reindeer.png" alt="Pictures from Norway" style="max-width: 100%;">
+    <img src="/blog/norway-research-visit/reindeer.png" alt="Pictures from Norway" title="Pictures from Norway" style="max-width: 100%;">
 </p>
 
 
@@ -66,5 +66,5 @@ This experience was one of the highlights of my academic journey. From stimulati
 
 Here are more pictures!! 
 <p style="text-align: center;">
-    <img src="/blog/norway-research-visit/last_pics.png" alt="Pictures from Norway" style="max-width: 100%;">
+    <img src="/blog/norway-research-visit/last_pics.png" alt="Pictures from Norway" title="Pictures from Norway" style="max-width: 100%;">
 </p>

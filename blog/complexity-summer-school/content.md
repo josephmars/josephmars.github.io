@@ -17,7 +17,7 @@ image: "https://static.wixstatic.com/media/7b584b_6e9e995edd754b8dbc41a59abfbfa3
 What happens when you put together **60 scholars** and practitioners from different disciplines and more than 22 countries? You get the most amazingly diverse and remarkable conversations, memories, and ideas! And well, that is exactly what happened during the 2024 **Complexity Summer School** (CGS) in Bogotá, Colombia, organized by the **Santa Fe Institute** (SFI) and held in la **Universidad de los Andes** (Uniandes). This intensive, 12-day program provided immersive exposure to the latest complex methods, models, and frameworks for thinking about economics and governance.
 
 <p style="text-align: center;">
-    <img src="https://static.wixstatic.com/media/7b584b_1c7fe4107b2f4c84b0cec5a36b160edb~mv2.png/v1/fill/w_510,h_510,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_1c7fe4107b2f4c84b0cec5a36b160edb~mv2.png" alt="Map of Colombia" style="max-width: 40%;">
+    <img src="https://static.wixstatic.com/media/7b584b_1c7fe4107b2f4c84b0cec5a36b160edb~mv2.png/v1/fill/w_510,h_510,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_1c7fe4107b2f4c84b0cec5a36b160edb~mv2.png" alt="Map of Colombia" title="Map of Colombia" style="max-width: 40%;">
      <em>Figure 1. Location of Colombia. Taken from: https://britannica.com/place/Bogota</em>
 </p>
 
@@ -30,7 +30,7 @@ The objective of the school was clear: **generate ideas!** The crazier the bette
    The fact that you could go with peers for self-organized dinners, to get a coffee, even to play tejo (a traditional Colombian sport), makes a huge difference fostering an environment where interdisciplinary research can thrive because, even if no conversations about research were held, you get to know the other participants on a personal level. This is particularly important for working on a group project. Through informal activities, you learn who you have more affinity to work with. Also, it allows you to know other participants' interests outside of their research fields and their careers. With this, it is easier to build conversations with them, and, if convincing, progressively move discussions towards research. These informal interactions played a key role in the team formation.
 
 <p style="text-align: center;">
-    <img src="https://static.wixstatic.com/media/7b584b_900e90c4a9114f10b0b500d8670e2763~mv2.png/v1/fill/w_626,h_418,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_900e90c4a9114f10b0b500d8670e2763~mv2.png" alt="Participants hanging out in Bogotá." style="max-width: 60%;">
+    <img src="https://static.wixstatic.com/media/7b584b_900e90c4a9114f10b0b500d8670e2763~mv2.png/v1/fill/w_626,h_418,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_900e90c4a9114f10b0b500d8670e2763~mv2.png" alt="Participants hanging out in Bogotá." title="Participants hanging out in Bogotá." style="max-width: 60%;">
      <em>Figure 2. Participants hanging out in Bogotá.</em>
 </p>
 
@@ -38,7 +38,7 @@ The objective of the school was clear: **generate ideas!** The crazier the bette
    While graduate students, practitioners, faculty members, and independent researchers attended, we all felt we were on the same level, and we all had the same opportunity to talk to each other. Everyone was called by their first name-- no "Dr." or "Mr." or "Ms." were used the whole time; no one wore fancy suits; and even the faculty would attend the sessions with us. I believe this was a crucial approach to get the attendants to interact with the faculty because one could ask any questions or have any discussion without unnecessary protocols or barriers imposed. Considering that most projects were proposed in the fields that the faculty works on, this led to easier mentorship rapport and more tailored project guidance and action.
 
 <p style="text-align: center;">
-    <img src="https://static.wixstatic.com/media/7b584b_54d937a087a34f94b476e4cb824334ae~mv2.jpg/v1/fill/w_889,h_445,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_54d937a087a34f94b476e4cb824334ae~mv2.jpg" alt="All participants of CGS 2024." style="max-width: 80%;">
+    <img src="https://static.wixstatic.com/media/7b584b_54d937a087a34f94b476e4cb824334ae~mv2.jpg/v1/fill/w_889,h_445,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_54d937a087a34f94b476e4cb824334ae~mv2.jpg" alt="All participants of CGS 2024." title="All participants of CGS 2024." style="max-width: 80%;">
      <em>Figure 3. All participants of CGS 2024.</em>
 </p>
 
@@ -47,7 +47,7 @@ The objective of the school was clear: **generate ideas!** The crazier the bette
 Since the proof is in the pudding, I summarized some project ideas that I believe best exemplify the program's objectives, including the project of my team. The first one focuses on exploring hidden economic activities in developing nations through analogies to "economic dark matter," using machine learning and agent-based modeling to reveal these concealed dynamics. Another project examines historical memory patterns, hypothesizing that our knowledge of history fades over time, similar to the distribution of stars in the night sky, using computational analysis and network theory. The third project, our own, investigates how workers' perceptions and adaptation strategies to AI-driven automation evolve, analyzing online discussions to understand trends in job security and adaptation strategies in response to emerging AI technologies.
 
 <p style="text-align: center;"> 
-    <img src="https://static.wixstatic.com/media/7b584b_cb02a84b677e43b39ed93083974565c3~mv2.png/v1/fill/w_926,h_371,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_cb02a84b677e43b39ed93083974565c3~mv2.png" alt="Our presentation of the project idea." style="max-width: 80%;">
+    <img src="https://static.wixstatic.com/media/7b584b_cb02a84b677e43b39ed93083974565c3~mv2.png/v1/fill/w_926,h_371,al_c,lg_1,q_85,enc_avif,quality_auto/7b584b_cb02a84b677e43b39ed93083974565c3~mv2.png" alt="Our presentation of the project idea." title="Our presentation of the project idea." style="max-width: 80%;">
      <em>Figure 4. Our presentation of the project idea.</em>
 </p>
 
