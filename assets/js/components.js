@@ -46,13 +46,13 @@ function createFooter() {
     return `
     <footer class="d-flex flex-wrap justify-content-center py-3 my-4 border-top">
         <div class="d-flex justify-content-center gap-3 mt-3">
-            <a href="mailto:josephms957@gmail.com" class="text-decoration-none text-dark">
+            <a href="mailto:josephms957@gmail.com" class="text-decoration-none text-dark" target="_blank">
                 <i class="fa-solid fa-envelope" style="font-size: 1.5em; color: #000000;"></i>
             </a>
-            <a href="https://github.com/josephmars" class="text-decoration-none text-dark">
+            <a href="https://github.com/josephmars" class="text-decoration-none text-dark" target="_blank">
                 <i class="fa-brands fa-github" style="font-size: 1.5em; color: #000000;"></i>
             </a>
-            <a href="https://www.linkedin.com/in/josephmars/" class="text-decoration-none text-dark">
+            <a href="https://www.linkedin.com/in/josephmars/" class="text-decoration-none text-dark" target="_blank">
                 <i class="fa-brands fa-linkedin" style="font-size: 1.5em; color: #000000;"></i>
             </a>
         </div>
