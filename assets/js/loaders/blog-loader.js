@@ -150,6 +150,56 @@ class BlogLoader {
         }
     }
 
+    createArticleSchema(post) {
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.description,
+            "author": {
+                "@type": "Person",
+                "name": "Joseph Martinez",
+                "url": "https://josephmars.me",
+                "jobTitle": "Data Scientist",
+                "email": "josephms957@gmail.com",
+                "image": "https://josephmars.me/assets/images/joseph_martinez.jpg",
+                "sameAs": [
+                    "https://github.com/josephmars",
+                    "https://www.linkedin.com/in/josephmars/"
+                ],
+                "description": "Data Scientist with 4 years of experience specializing in Machine Learning, LLM training and deployment, and simulation modeling."
+            },
+            "datePublished": new Date(post.date).toISOString(),
+            "dateModified": post.lastModified 
+                ? new Date(post.lastModified).toISOString() 
+                : new Date(post.date).toISOString(),
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://josephmars.me/blog/${post.slug}/`
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Joseph Martinez",
+                "url": "https://josephmars.me"
+            },
+            "keywords": post.tags ? post.tags.join(", ") : "",
+            "articleSection": post.category,
+            "timeRequired": `PT${post.readTime || 5}M`
+        };
+
+        // Add image if available
+        if (post.image) {
+            schema.image = {
+                "@type": "ImageObject",
+                "url": post.image.startsWith('http') ? post.image : `https://josephmars.me${post.image}`,
+                "width": "1200",
+                "height": "600"
+            };
+        }
+
+        return schema;
+    }
+
     async renderBlogPosts(containerId) {
         console.log('Rendering blog posts to container:', containerId);
         const container = document.getElementById(containerId);
@@ -165,6 +215,39 @@ class BlogLoader {
                 return;
             }
 
+            // Generate schema for all posts
+            const schemas = posts.map(post => this.createArticleSchema(post));
+            
+            // Create schema script tag
+            const schemaScript = document.createElement('script');
+            schemaScript.type = 'application/ld+json';
+            schemaScript.text = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "itemListElement": schemas.map((schema, index) => ({
+                    "@type": "ListItem",
+                    "position": index + 1,
+                    "item": schema
+                }))
+            }, null, 2);
+
+            // Remove any existing schema
+            const existingSchema = document.querySelector('script[type="application/ld+json"]');
+            if (existingSchema) {
+                console.log('Removing existing schema');
+                existingSchema.remove();
+            }
+
+            // Add schema to head
+            const head = document.getElementsByTagName('head')[0];
+            if (!head) {
+                console.error('Head element not found!');
+                return;
+            }
+            head.appendChild(schemaScript);
+            console.log('Schema added to head:', schemaScript.text);
+
+            // Render posts
             const html = posts.map(post => this.createBlogPostCard(post)).join('');
             container.innerHTML = html;
             console.log('Successfully rendered blog posts');

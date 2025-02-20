@@ -84,3 +84,9 @@ root/
 ```html
 
 ```
+
+
+To consider:
+- Check Schemas for blog posts.
+- Add some Schemas manually for better SEO and other with JS.
+- 
