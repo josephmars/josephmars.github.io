@@ -90,8 +90,36 @@ async function fetchGitHubProjects() {
     
     return [...projects, ...ymlOnlyProjects];
 }
+// Add this new function to create the schema
+function createProjectsSchema(projects) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Joseph Martinez - AI & ML Projects",
+        "description": "A collection of AI, deep learning, and optimization projects developed by Joseph Martinez.",
+        "numberOfItems": projects.length,
+        "itemListElement": projects.map((project, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+                "@type": "SoftwareSourceCode",
+                "name": project.name,
+                "description": project.description,
+                "programmingLanguage": project.technologies.join(", "),
+                "author": {
+                    "@type": "Person",
+                    "name": "Joseph Martinez",
+                    "url": "https://josephmars.me/#Person"
+                },
+                "codeRepository": project.github,
+                "url": project.documentation || project.github,
+                "thumbnailUrl": project.image || "https://josephmars.me/assets/images/fallback/project.png"
+            }
+        }))
+    };
+}
 
-// Update your existing project loading logic
+// Modify the renderAllProjects function to include schema generation
 async function renderAllProjects() {
     try {
         const allProjects = await fetchGitHubProjects();
@@ -113,6 +141,31 @@ async function renderAllProjects() {
             ? allProjects.filter(p => p.main_page)
             : allProjects;
 
+        // Generate and add schema
+        const projectsSchema = createProjectsSchema(projectsToShow);
+        
+        // Remove existing projects schema if it exists
+        const existingSchemas = document.querySelectorAll('script[type="application/ld+json"]');
+        existingSchemas.forEach(schema => {
+            try {
+                const content = JSON.parse(schema.text || schema.textContent);
+                if (content["@type"] === "ItemList" && content.itemListElement?.[0]?.item?.["@type"] === "SoftwareSourceCode") {
+                    console.log('Removing existing projects schema');
+                    schema.remove();
+                }
+            } catch (e) {
+                console.error('Error parsing schema:', e);
+            }
+        });
+
+        // Add new schema
+        const schemaScript = document.createElement('script');
+        schemaScript.type = 'application/ld+json';
+        schemaScript.textContent = JSON.stringify(projectsSchema, null, 2);
+        document.head.appendChild(schemaScript);
+        console.log('Projects schema added to head');
+
+        // Render project cards
         projectsToShow.forEach(project => {
             const projectCard = createProjectCard(project);
             projectsGrid.appendChild(projectCard);
