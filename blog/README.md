@@ -6,9 +6,10 @@
 4. Add images to the folder and then reference them in the Markdown file.
 5. Add the folder to  `posts.json` file in the `blog` directory.
 6. Add the blog post information to the `sitemap.xml` file.
+7. Add metadata to the `index.html` file based on the Markdown file.
 
 Notes:
 - The `posts.json` file is used to generate the blog posts on the homepage.
-- The `content.md` file is the main content of the blog post. IT also contains the metadata to be displayed in the blog post card.
+- The `content.md` file is the main content of the blog post. It also contains the metadata to be displayed in the blog post card.
 
 

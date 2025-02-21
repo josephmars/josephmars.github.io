@@ -122,9 +122,6 @@ class BlogPostRenderer {
     }
 
     updatePageMetadata(frontMatter) {
-        // Update page title
-        document.title = `${frontMatter.title} - Joseph Martinez`;
-
         // Update meta tags
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription) {
@@ -185,9 +182,6 @@ class BlogPostRenderer {
     }
 
     renderPost(frontMatter, content) {
-        // Update page metadata
-        document.title = `${frontMatter.title} | Joseph Martinez`;
-        
         // Update favicon
         const favicon = document.querySelector('link[rel="icon"]');
         if (!favicon) {
@@ -212,77 +206,8 @@ class BlogPostRenderer {
         
         // Highlight code blocks
         Prism.highlightAll();
-        
-        // Add schema
-        const articleSchema = this.createArticleSchema(frontMatter, content);
-        const schemaScript = document.createElement('script');
-        schemaScript.type = 'application/ld+json';
-        schemaScript.text = JSON.stringify(articleSchema, null, 2);
-        
-        // Remove any existing schema
-        const existingSchema = document.querySelector('script[type="application/ld+json"]');
-        if (existingSchema) {
-            existingSchema.remove();
-        }
-        
-        document.head.appendChild(schemaScript);
 
         console.log('Render complete');
-    }
-
-    createArticleSchema(frontMatter, content) {
-        const currentUrl = window.location.href;
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": frontMatter.title,
-            "description": frontMatter.description,
-            "author": {
-                "@type": "Person",
-                "name": "Joseph Martinez",
-                "url": "https://josephmars.me",
-                "jobTitle": "Data Scientist",
-                "email": "josephms957@gmail.com",
-                "url": "https://josephmars.me",
-                "image": "https://josephmars.me/assets/images/joseph_martinez.jpg",
-                "sameAs": [
-                      "https://github.com/josephmars",
-                    "https://www.linkedin.com/in/josephmars/"
-                ],
-                "description": "Data Scientist with 4 years of experience specializing in Machine Learning, LLM training and deployment, and simulation modeling."
-            },
-            "datePublished": new Date(frontMatter.date).toISOString(),
-            "dateModified": frontMatter.lastModified 
-                ? new Date(frontMatter.lastModified).toISOString() 
-                : new Date(frontMatter.date).toISOString(),
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": currentUrl
-            },
-            "publisher": {
-                "@type": "Person",
-                "name": "Joseph Martinez",
-                "url": "https://josephmars.me"
-            },
-            "keywords": frontMatter.tags ? frontMatter.tags.join(", ") : "",
-            "articleSection": frontMatter.category,
-            "wordCount": frontMatter.wordCount || (content ? this.countWords(content) : 0),
-            "timeRequired": `PT${frontMatter.readTime || 5}M`
-        };
-
-        // Add image if available
-        if (frontMatter.image) {
-            schema.image = {
-                "@type": "ImageObject",
-                "url": "https://josephmars.me" + frontMatter.image,
-                "width": "1200",
-                "height": "600"
-            };
-        } else {
-            console.log("No blog image was found");
-        }
-
-        return schema;
     }
 
     countWords(content) {
