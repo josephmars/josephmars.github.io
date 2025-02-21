@@ -150,16 +150,16 @@ class BlogLoader {
         }
     }
 
-    createArticleSchema(post) {
+    createBlogPostSchema(post) {
         const schema = {
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "BlogPosting",
             "headline": post.title,
             "description": post.description,
             "author": {
                 "@type": "Person",
                 "name": "Joseph Martinez",
-                "url": "https://josephmars.me",
+                "url": "https://josephmars.me/#Person",
                 "jobTitle": "Data Scientist",
                 "email": "josephms957@gmail.com",
                 "image": "https://josephmars.me/assets/images/joseph_martinez.jpg",
@@ -180,7 +180,7 @@ class BlogLoader {
             "publisher": {
                 "@type": "Person",
                 "name": "Joseph Martinez",
-                "url": "https://josephmars.me"
+                "url": "https://josephmars.me/#Person"
             },
             "keywords": post.tags ? post.tags.join(", ") : "",
             "articleSection": post.category,
@@ -192,8 +192,8 @@ class BlogLoader {
             schema.image = {
                 "@type": "ImageObject",
                 "url": post.image.startsWith('http') ? post.image : `https://josephmars.me${post.image}`,
-                "width": "1200",
-                "height": "600"
+                "width": "1280",
+                "height": "640"
             };
         }
 
@@ -216,12 +216,12 @@ class BlogLoader {
             }
 
             // Generate schema for all posts
-            const schemas = posts.map(post => this.createArticleSchema(post));
+            const schemas = posts.map(post => this.createBlogPostSchema(post));
             
-            // Create schema script tag
-            const schemaScript = document.createElement('script');
-            schemaScript.type = 'application/ld+json';
-            schemaScript.text = JSON.stringify({
+            // Create schema script tag for articles
+            const articleSchemaScript = document.createElement('script');
+            articleSchemaScript.type = 'application/ld+json';
+            articleSchemaScript.text = JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "ItemList",
                 "itemListElement": schemas.map((schema, index) => ({
@@ -231,21 +231,24 @@ class BlogLoader {
                 }))
             }, null, 2);
 
-            // Remove any existing schema
-            const existingSchema = document.querySelector('script[type="application/ld+json"]');
-            if (existingSchema) {
-                console.log('Removing existing schema');
-                existingSchema.remove();
-            }
+            // Remove only the article list schema if it exists
+            const existingSchemas = document.querySelectorAll('script[type="application/ld+json"]');
+            existingSchemas.forEach(schema => {
+                const content = JSON.parse(schema.text || schema.textContent);
+                if (content["@type"] === "ItemList") {
+                    console.log('Removing existing article list schema');
+                    schema.remove();
+                }
+            });
 
-            // Add schema to head
+            // Add article list schema to head
             const head = document.getElementsByTagName('head')[0];
             if (!head) {
                 console.error('Head element not found!');
                 return;
             }
-            head.appendChild(schemaScript);
-            console.log('Schema added to head:', schemaScript.text);
+            head.appendChild(articleSchemaScript);
+            console.log('Article list schema added to head');
 
             // Render posts
             const html = posts.map(post => this.createBlogPostCard(post)).join('');
