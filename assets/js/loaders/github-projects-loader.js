@@ -122,6 +122,7 @@ function createProjectsSchema(projects) {
 // Modify the renderAllProjects function to include schema generation
 async function renderAllProjects() {
     try {
+        console.log('Starting renderAllProjects...');
         const allProjects = await fetchGitHubProjects();
         const projectsGrid = document.getElementById('projectsGrid') || document.getElementById('mainProjectsGrid');
         
@@ -130,42 +131,74 @@ async function renderAllProjects() {
             return;
         }
 
-        // Clear existing content
-        projectsGrid.innerHTML = '';
+        console.log('Grid found:', projectsGrid.id);
         
         // Determine if we're on the main page or projects page
         const isMainPage = projectsGrid.id === 'mainProjectsGrid';
+        console.log('Is main page:', isMainPage);
         
         // Filter projects based on page type
-        const projectsToShow = isMainPage 
-            ? allProjects.filter(p => p.main_page)
-            : allProjects;
-
-        // Generate and add schema
-        const projectsSchema = createProjectsSchema(projectsToShow);
+        let projectsToShow = isMainPage ? 
+            allProjects.filter(p => p.main_page) : 
+            allProjects;
         
-        // Remove existing projects schema if it exists
-        const existingSchemas = document.querySelectorAll('script[type="application/ld+json"]');
-        existingSchemas.forEach(schema => {
-            try {
-                const content = JSON.parse(schema.text || schema.textContent);
-                if (content["@type"] === "ItemList" && content.itemListElement?.[0]?.item?.["@type"] === "SoftwareSourceCode") {
-                    console.log('Removing existing projects schema');
-                    schema.remove();
-                }
-            } catch (e) {
-                console.error('Error parsing schema:', e);
+        console.log('Projects to show:', projectsToShow.length);
+
+        // Generate schema first
+        const projectsSchema = createProjectsSchema(projectsToShow);
+        console.log('Generated schema:', projectsSchema);
+
+        // Wait for DOM to be fully loaded
+        await new Promise(resolve => {
+            if (document.readyState === 'complete') {
+                resolve();
+            } else {
+                window.addEventListener('load', resolve);
             }
         });
 
-        // Add new schema
+        // Create schema script tag
         const schemaScript = document.createElement('script');
         schemaScript.type = 'application/ld+json';
         schemaScript.textContent = JSON.stringify(projectsSchema, null, 2);
-        document.head.appendChild(schemaScript);
-        console.log('Projects schema added to head');
+        schemaScript.id = 'projects-schema';
 
-        // Render project cards
+        // Remove any existing projects schema
+        const existingProjectsSchema = document.getElementById('projects-schema');
+        if (existingProjectsSchema) {
+            console.log('Removing existing projects schema');
+            existingProjectsSchema.remove();
+        }
+
+        // Find all existing schema scripts
+        const head = document.getElementsByTagName('head')[0];
+        const existingSchemas = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+        
+        // Find the Person schema
+        const personSchema = existingSchemas.find(script => {
+            try {
+                const content = JSON.parse(script.textContent);
+                return content["@type"] === "Person";
+            } catch (e) {
+                return false;
+            }
+        });
+
+        // Insert the new schema
+        if (personSchema) {
+            console.log('Found person schema, inserting after it');
+            personSchema.insertAdjacentElement('afterend', schemaScript);
+        } else {
+            console.log('No person schema found, appending to head');
+            head.appendChild(schemaScript);
+        }
+
+        // Verify schema was added
+        const addedSchema = document.getElementById('projects-schema');
+        console.log('Schema added successfully:', !!addedSchema);
+
+        // Clear and render projects
+        projectsGrid.innerHTML = '';
         projectsToShow.forEach(project => {
             const projectCard = createProjectCard(project);
             projectsGrid.appendChild(projectCard);
@@ -183,8 +216,10 @@ async function renderAllProjects() {
             `;
             projectsGrid.parentElement.appendChild(seeAllDiv);
         }
+
+        console.log('Finished rendering projects and adding schema');
     } catch (error) {
-        console.error('Error loading projects:', error);
+        console.error('Error in renderAllProjects:', error);
     }
 }
 
@@ -264,7 +299,8 @@ function createProjectCard(project) {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing projects loader');
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderAllProjects);
+} else {
     renderAllProjects();
-}); 
+} 
