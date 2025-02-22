@@ -25,15 +25,13 @@ function createHeader() {
                                href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link ${window.location.pathname.includes('/resume') ? 'active border-bottom border-dark border-2' : ''}" 
+                               href="/resume">Resume</a>
+                        </li>
+                        <li class="nav-item">
                             <button onclick="changeTheme()" class="btn me-2">
                                 <i id="darkIcon" class="fa fa-moon"></i>
                             </button>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-outline-primary" download="Joseph_Martinez_Resume.pdf" 
-                               href="${window.location.pathname.includes('/pages/') ? '../' : ''}resume/Joseph_Martinez_Resume.pdf">
-                                Resume <i class="fa fa-download ms-1"></i>
-                            </a>
                         </li>
                     </ul>
                 </div>
@@ -73,3 +71,41 @@ function initComponents() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initComponents); 
+
+
+// Change theme functions
+const darkTheme = () => {
+    document.querySelector("body").setAttribute("data-bs-theme", "dark");
+    document.querySelector("#darkIcon").setAttribute("class", "fa-regular fa-sun");
+}
+
+const lightTheme = () => {
+    document.querySelector("body").setAttribute("data-bs-theme", "light");
+    document.querySelector("#darkIcon").setAttribute("class", "fa fa-moon");
+}
+
+// Change theme on click (dark/light)
+const changeTheme = () => {
+    if (document.querySelector("body").getAttribute("data-bs-theme") === "light") {
+        darkTheme();
+    } else {
+        lightTheme();
+    }
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', async function() {
+    // Initialize tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+    // Initialize blog posts
+    try {
+        console.log('Loading blog posts...');
+        const latestBlogLoader = new BlogLoader({ maxPosts: 3}); // Maximum number of posts to load
+        await latestBlogLoader.renderBlogPosts('latestBlogPosts');
+        console.log('Blog posts loaded successfully');
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+    }
+});
