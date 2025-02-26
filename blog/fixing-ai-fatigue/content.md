@@ -58,9 +58,14 @@ Rather than trying to master AI overnight, focus on steady progress. AI literacy
 Building adaptability through problem-solving, critical thinking, and digital fluency ensures long-term relevance. AI will continue evolving, but a measured approach to learning will keep you informed without the stress of feeling left behind. The key is consistency—taking small but meaningful steps towards understanding AI's role in your industry rather than chasing every new development.
 
 <p style="text-align: center;">
-    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/41/763803169e4d31a5e7611bc928124b/Course-Logo.png" alt="AI for Everyone" title="AI for Everyone" style="max-height: 300px;">
-    <img src="/blog/fixing-ai-fatigue/elements-of-ai.png" alt="Elements of AI" title="Elements of AI" style="max-height: 300px;">
-    <em>AI for Everyone by Andrew Ng and Elements of AI by the University of Helsinki</em>
+    <a href="https://www.coursera.org/learn/ai-for-everyone">
+        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/41/763803169e4d31a5e7611bc928124b/Course-Logo.png" alt="AI for Everyone" title="AI for Everyone" style="max-height: 300px;">
+    </a>
+    <a href="https://www.elementsofai.com/">
+        <img src="/blog/fixing-ai-fatigue/elements-of-ai.png" alt="Elements of AI" title="Elements of AI" style="max-height: 300px;">
+    </a>
+    <br>
+    <em><a href="https://www.coursera.org/learn/ai-for-everyone">AI for Everyone</a> by Andrew Ng and <a href="https://www.elementsofai.com/">Elements of AI</a> by the University of Helsinki</em>
 </p>
 
 
