@@ -53,7 +53,7 @@ Instead of tracking AI developments daily, focus on essentials relevant to your 
 
 ## 4. Future-Proof Your Skills Without Overloading
 
-Rather than trying to master AI overnight, focus on steady progress. AI literacy can be developed through beginner-friendly courses like AI for Everyone by Andrew Ng or Elements of AI by the University of Helsinki <a href="#references">[7]</a>. Learning AI in relation to your field—whether marketing, finance, or design—makes it more applicable and sustainable.
+Rather than trying to master AI overnight, focus on steady progress. AI literacy can be developed through beginner-friendly courses like [AI for Everyone](https://www.coursera.org/learn/ai-for-everyone) by Andrew Ng or [Elements of AI](https://www.elementsofai.com/) by the University of Helsinki <a href="#references">[7]</a>. Learning AI in relation to your field—whether marketing, finance, or design—makes it more applicable and sustainable.
 
 Building adaptability through problem-solving, critical thinking, and digital fluency ensures long-term relevance. AI will continue evolving, but a measured approach to learning will keep you informed without the stress of feeling left behind. The key is consistency—taking small but meaningful steps towards understanding AI's role in your industry rather than chasing every new development.
 
