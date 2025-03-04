@@ -229,7 +229,7 @@ function createProjectCard(project) {
     
     if (project.github) {
         documentationButtons.push(`
-            <a href="${project.github}" class="btn btn-sm btn-outline-secondary">
+            <a href="${project.github}" class="btn btn-sm btn-outline-secondary" target="_blank">
                 <i class="fa-brands fa-github me-2"></i>Code
             </a>
         `);
@@ -237,7 +237,7 @@ function createProjectCard(project) {
     
     if (project.documentation) {
         documentationButtons.push(`
-            <a href="${project.documentation}" class="btn btn-sm btn-outline-primary">
+            <a href="${project.documentation}" class="btn btn-sm btn-outline-primary" target="_blank">
                 <i class="fa-solid fa-book me-2"></i>Documentation
             </a>
         `);
@@ -245,7 +245,7 @@ function createProjectCard(project) {
     
     if (project.paper) {
         documentationButtons.push(`
-            <a href="${project.paper}" class="btn btn-sm btn-outline-info">
+            <a href="${project.paper}" class="btn btn-sm btn-outline-info" target="_blank">
                 <i class="fa-solid fa-file-lines me-2"></i>Paper
             </a>
         `);
@@ -253,7 +253,7 @@ function createProjectCard(project) {
     
     if (project.report) {
         documentationButtons.push(`
-            <a href="${project.report}" class="btn btn-sm btn-outline-success">
+            <a href="${project.report}" class="btn btn-sm btn-outline-success" target="_blank">
                 <i class="fa-solid fa-file-alt me-2"></i>Report
             </a>
         `);
@@ -269,7 +269,7 @@ function createProjectCard(project) {
     
     if (project.post) {
         documentationButtons.push(`
-            <a href="${project.post}" class="btn btn-sm btn-outline-dark">
+            <a href="${project.post}" class="btn btn-sm btn-outline-dark" target="_blank">
                 <i class="fa-solid fa-newspaper me-2"></i>Post
             </a>
         `);
