@@ -61,10 +61,40 @@ function createFooter() {
     </footer>`;
 }
 
+function createTableOfContents() {
+    return `
+    <nav class="floating-toc">
+      <a href="#profile" class="toc-item" aria-label="Go to Profile section">
+        <span class="toc-tooltip">Profile</span>
+      </a>
+      <a href="#blog-posts" class="toc-item" aria-label="Go to Blog Posts section">
+        <span class="toc-tooltip">Blog Posts</span>
+      </a>
+      <a href="#projects" class="toc-item" aria-label="Go to Projects section">
+        <span class="toc-tooltip">Projects</span>
+      </a>
+      <a href="#experience" class="toc-item" aria-label="Go to Experience section">
+        <span class="toc-tooltip">Experience</span>
+      </a>
+      <a href="#education" class="toc-item" aria-label="Go to Education section">
+        <span class="toc-tooltip">Education</span>
+      </a>
+    </nav>
+    `;
+}
+
 // Function to initialize components
 function initComponents() {
     // Insert header
     document.body.insertAdjacentHTML('afterbegin', createHeader());
+    
+    // Insert TOC if we're on the homepage
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        document.body.insertAdjacentHTML('afterbegin', createTableOfContents());
+        
+        // Initialize TOC highlighting
+        document.addEventListener('DOMContentLoaded', initTOCHighlighting);
+    }
     
     // Insert footer
     const main = document.querySelector('main');
@@ -73,9 +103,40 @@ function initComponents() {
     }
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initComponents); 
-
+// Function to handle TOC highlighting
+function initTOCHighlighting() {
+    const sections = document.querySelectorAll('section[id], #profile');
+    const tocItems = document.querySelectorAll('.toc-item');
+    
+    function highlightTocItem() {
+        const scrollPosition = window.scrollY;
+        
+        sections.forEach((section, index) => {
+            if (index < tocItems.length) { // Ensure we don't go out of bounds
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop - 250 && 
+                    scrollPosition < sectionTop + sectionHeight - 150) {
+                    tocItems.forEach(item => item.classList.remove('active'));
+                    tocItems[index].classList.add('active');
+                }
+            }
+        });
+    }
+    
+    // Add click handler for first section
+    tocItems[0].addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    window.addEventListener('scroll', highlightTocItem);
+    highlightTocItem(); // Initial highlight
+}
 
 // Change theme functions
 const darkTheme = () => {
@@ -113,3 +174,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error('Error loading blog posts:', error);
     }
 });
+
+// Initialize components
+initComponents();
