@@ -6,7 +6,11 @@ date: "2024-12-06"
 image: "/blog/norway-research-visit/selfie.png"
 category: "RESEARCH"
 readTime: 3
-tags: ["interdisciplinary research", "graduate research assistant experiences", "newspaper coding", "AI Research", "student travel", "student research experiences", "Artificial Intelligence"]
+tags: 
+  - Interdisciplinary research
+  - AI Research
+  - Travel
+  - Artificial Intelligence
 ---
 
 <div style="text-align: right;">

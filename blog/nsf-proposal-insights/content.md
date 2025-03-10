@@ -10,8 +10,6 @@ tags:
   - Research
   - Grant Writing
   - NSF
-  - Proposal Development
-  - Academic
 ---
 
 <div style="text-align: right;">

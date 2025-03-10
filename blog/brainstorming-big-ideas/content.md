@@ -7,11 +7,7 @@ readTime: 1
 category: "RESEARCH"
 image: "https://static.wixstatic.com/media/4c6ddb_c09d4ba9c35c40368252fa1d46fe8f8a~mv2.png/v1/fill/w_1000,h_1700,al_c,q_90,enc_avif,quality_auto/4c6ddb_c09d4ba9c35c40368252fa1d46fe8f8a~mv2.png"
 tags:
-  - Research
-  - Academic
-  - Collaboration
-  - Methodology
-  - Writing
+  - Interdisciplinary Research
 ---
 
 <div style="text-align: right;">

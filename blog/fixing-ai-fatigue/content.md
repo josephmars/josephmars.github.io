@@ -6,6 +6,8 @@ date: "2025-02-26"
 category: "ARTIFICIAL INTELLIGENCE"
 readTime: 5
 image: "/blog/fixing-ai-fatigue/thumbnail-1280x640.png"
+tags:
+  - Artificial Intelligence
 ---
 
 <p style="text-align: center;">
