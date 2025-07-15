@@ -1,14 +1,14 @@
 education:
-  - institution: "Old Dominion University"
-    degree: "M.S. Modeling and Simulation Engineering"
-    logo: "https://media.licdn.com/dms/image/v2/C4E0BAQG5Y7rGx9ZScQ/company-logo_100_100/company-logo_100_100/0/1631369250977/old_dominion_university_logo?e=1744848000&v=beta&t=XF3FQv2zqP9kj-Ix0Sv6lKMuOyaplGQLbLVAOv1GKzo"
-    period: "Aug 2022 – Dec 2024"
-    gpa: "3.7"
-    details: []
+- institution: "Old Dominion University"
+  degree: "M.S. Modeling and Simulation Engineering"
+  logo: "https://josephmars.me/assets/images/logos/old_dominion_university_logo.jpeg"
+  period: "Aug 2022 – Dec 2024"
+  gpa: "3.7"
+  details: []
 
-  - institution: "Universidad del Norte"
-    degree: "B.S. Industrial Engineering"
-    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQFc6CdSDsAX5A/company-logo_200_200/company-logo_200_200/0/1666970773204/universidad_del_norte_logo?e=1744848000&v=beta&t=3cPCIcU2VoQABpltc_w5H9GCnRdhHK3M-CsPW5xnzTo"
-    period: "Jan 2017 – Mar 2022"
-    gpa: "3.6"
-    details: ["Graduated with honors"] 
+- institution: "Universidad del Norte"
+  degree: "B.S. Industrial Engineering"
+  logo: "https://josephmars.me/assets/images/logos/universidad_del_norte_logo.jpeg"
+  period: "Jan 2017 – Mar 2022"
+  gpa: "3.6"
+  details: [ "Graduated with honors" ]
