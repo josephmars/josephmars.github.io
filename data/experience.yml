@@ -1,5 +1,14 @@
 experiences:
-- company: "Aaru"
+- company: "Inter-American Development Bank"
+  title: "Generative AI Technical Lead Consultant"
+  logo: "https://josephmars.me/assets/images/logos/inter_american_development_bank_logo.jpeg"
+  period: "May 2025 - Present"
+  duration: "3 mos"
+  achievements:
+  - "Led the design and implementation of scalable Generative AI architectures using Azure, enabling efficient and secure integration of AI solutions within a complex technical environment."
+  - "Provided technical leadership and mentorship across cross-functional teams, upskilling team members on best practices in Machine Learning, NLP, and responsible use of Generative AI."
+
+- company: "Aaru AI"
   title: "AI Software Engineer"
   logo: "https://josephmars.me/assets/images/logos/aaru_ai_logo.jpeg"
   period: "Jul 2024 – Jan 2025"
