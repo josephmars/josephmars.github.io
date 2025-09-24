@@ -1,0 +1,47 @@
+name: Deploy with SemVer
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy_auto_version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Get Next Version (Semver Conventional Commits)
+      id: semver
+      uses: ietf-tools/semver-action@v1.10.2
+      with:
+        token: ${{ github.token }}
+        branch: main
+        noVersionBumpBehavior: current
+
+    - name: Update CHANGELOG
+      id: changelog
+      uses: requarks/changelog-action@v1
+      with:
+        token: ${{ github.token }}
+        tag: ${{ steps.semver.outputs.next }}
+    - name: Create Release
+      if: steps.semver.outputs.next != steps.semver.outputs.current
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        allowUpdates: true
+        draft: false
+        makeLatest: true
+        name: ${{ steps.semver.outputs.next }}
+        tag: ${{ steps.semver.outputs.next }}
+        body: ${{ steps.changelog.outputs.changes }}
+        token: ${{ github.token }}
+
+    - name: Commit CHANGELOG.md
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        branch: main
+        commit_message: 'docs: update CHANGELOG.md for ${{ steps.semver.outputs.next }} [skip ci]'
+        file_pattern: CHANGELOG.md
